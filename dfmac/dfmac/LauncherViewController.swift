@@ -9,8 +9,6 @@
 import Cocoa
 
 final class LauncherViewController: NSViewController {
-    private var preferences = Preferences()
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,7 +26,7 @@ final class LauncherViewController: NSViewController {
     }
     
     @IBAction func didClickLaunch(sender: AnyObject?) {
-        Launcher(preferences: preferences).launch()
+        Launcher.launch()
     }
 }
 

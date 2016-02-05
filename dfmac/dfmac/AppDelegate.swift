@@ -10,19 +10,18 @@ import Cocoa
 
 @NSApplicationMain
 final class AppDelegate: NSObject, NSApplicationDelegate {
-
-
-
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Insert code here to initialize your application
-    }
-
-    func applicationWillTerminate(aNotification: NSNotification) {
-        // Insert code here to tear down your application
+        AppDelegate.registerTransformers()
+        Preferences.registerDefaults()
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
         return true
+    }
+    
+    private static func registerTransformers() {
+        IntegerTransformer.register()
+        DisplayModeTransformer.register()
     }
 }
 

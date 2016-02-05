@@ -22,7 +22,11 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                            <connections>
+                                                <segue destination="ULG-mW-PVX" kind="show" id="nMi-VD-JNm"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -650,7 +654,7 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="DF Mac" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <rect key="contentRect" x="542" y="346" width="670" height="374"/>
@@ -662,7 +666,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="74" y="320"/>
         </scene>
         <!--Launcher View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -672,7 +676,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="670" height="374"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nii-l7-F6S">
+                            <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nii-l7-F6S" userLabel="Bacgrkound Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="670" height="374"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="launcher_background" id="dTs-5d-Ibr"/>
                             </imageView>
@@ -686,7 +690,7 @@
                                     <action selector="didClickQuit:" target="XfG-lQ-9wD" id="Oay-gY-Ze4"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wcd-Om-eFz">
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wcd-Om-eFz" userLabel="Launch Button">
                                 <rect key="frame" x="284" y="25" width="104" height="24"/>
                                 <buttonCell key="cell" type="squareTextured" title="Launch" bezelStyle="texturedSquare" alignment="center" borderStyle="border" transparent="YES" imageScaling="proportionallyDown" inset="2" id="wZS-v6-NKl">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -696,15 +700,258 @@
                                     <action selector="didClickLaunch:" target="XfG-lQ-9wD" id="j1h-7K-bWY"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8oW-UV-7qI" userLabel="Preferences Button">
+                                <rect key="frame" x="63" y="25" width="120" height="24"/>
+                                <buttonCell key="cell" type="squareTextured" title="Preferences" bezelStyle="texturedSquare" alignment="center" borderStyle="border" transparent="YES" imageScaling="proportionallyDown" inset="2" id="dO4-Mo-gvu">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="ULG-mW-PVX" kind="show" id="w7R-IM-pHr"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="739"/>
+            <point key="canvasLocation" x="74" y="844"/>
+        </scene>
+        <!--Preferences Window Controller-->
+        <scene sceneID="vXz-tT-DaR">
+            <objects>
+                <windowController showSeguePresentationStyle="single" id="ULG-mW-PVX" userLabel="Preferences Window Controller" sceneMemberID="viewController">
+                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="YYZ-6I-rpM">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="330" y="468" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1600" height="877"/>
+                        <toolbar key="toolbar" implicitIdentifier="82BE8652-0BBE-4273-93AD-CF674170B230" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="cxz-lK-rcH">
+                            <allowedToolbarItems/>
+                            <defaultToolbarItems/>
+                        </toolbar>
+                    </window>
+                    <connections>
+                        <segue destination="c9K-hx-nrh" kind="relationship" relationship="window.shadowedContentViewController" id="AJP-oC-J45"/>
+                    </connections>
+                </windowController>
+                <customObject id="10h-br-axR" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="844" y="765"/>
+        </scene>
+        <!--Preferences Tab View Controller-->
+        <scene sceneID="jog-UL-Pdy">
+            <objects>
+                <tabViewController selectedTabViewItemIndex="0" tabStyle="toolbar" id="c9K-hx-nrh" userLabel="Preferences Tab View Controller" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem label="Display" identifier="display" image="display_icon" id="oG9-c6-C8n"/>
+                    </tabViewItems>
+                    <tabView key="tabView" type="noTabsNoBorder" id="tbM-RU-DJf">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="message"/>
+                        <tabViewItems/>
+                    </tabView>
+                    <connections>
+                        <segue destination="hMe-gF-Zcj" kind="relationship" relationship="tabItems" id="GYm-s3-5FU"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="gt7-pe-5kQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1566" y="758"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vAg-QI-rbi">
+            <objects>
+                <viewController id="hMe-gF-Zcj" sceneMemberID="viewController">
+                    <view key="view" id="CjN-x6-tfd">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Uup-ZL-EZL">
+                                <rect key="frame" x="18" y="262" width="154" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="2em-wC-8Fw"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Display Mode:" id="i1Z-HK-ITd">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zW7-o6-fy6" userLabel="Display Mode Pop Up Button">
+                                <rect key="frame" x="176" y="256" width="257" height="26"/>
+                                <popUpButtonCell key="cell" type="push" title="Vertex Buffer Object (VBO)" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="kMM-fI-5bc" id="cej-Fd-iN2">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="ze2-LD-IfO">
+                                        <items>
+                                            <menuItem title="Standard" id="g35-Us-3CY"/>
+                                            <menuItem title="Text" id="bg0-h6-HgA"/>
+                                            <menuItem title="Frame Buffer" id="Iun-U1-N5Y"/>
+                                            <menuItem title="Vertex Buffer Object (VBO)" state="on" id="kMM-fI-5bc">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <binding destination="5uR-Vk-zwT" name="selectedIndex" keyPath="values.displayMode" id="RFI-O6-5nn">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">DisplayModeTransformer</string>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </popUpButton>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="OxE-jR-83G">
+                                <rect key="frame" x="176" y="235" width="256" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="57" id="u7D-Rb-ys8"/>
+                                </constraints>
+                                <buttonCell key="cell" type="check" title="Full Screen" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="96A-XX-ghp">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="5uR-Vk-zwT" name="value" keyPath="values.fullScreen" id="Wbu-sU-95d"/>
+                                </connections>
+                            </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="nS8-fk-vQS">
+                                <rect key="frame" x="176" y="183" width="256" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="57" id="rd2-pG-Xur"/>
+                                </constraints>
+                                <buttonCell key="cell" type="check" title="Show Frame Rate (FPS)" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="CvK-dc-psj">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="5uR-Vk-zwT" name="value" keyPath="values.showFPS" id="03x-Lu-qsh"/>
+                                </connections>
+                            </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="r7O-4e-hB7">
+                                <rect key="frame" x="176" y="163" width="256" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="57" id="KlR-Ad-1R0"/>
+                                </constraints>
+                                <buttonCell key="cell" type="check" title="Play Intro" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="agw-2Q-B5J">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="5uR-Vk-zwT" name="value" keyPath="values.playIntro" id="71e-4L-Q5B"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1sP-kA-bam" userLabel="Width Text Field">
+                                <rect key="frame" x="178" y="207" width="50" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="QhJ-X3-Of8"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="zj3-pJ-Ni7">
+                                    <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="ghZ-mH-q3o">
+                                        <real key="minimum" value="0.0"/>
+                                    </numberFormatter>
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <binding destination="5uR-Vk-zwT" name="enabled" keyPath="values.fullScreen" id="bQU-sg-3ks">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
+                                    <binding destination="5uR-Vk-zwT" name="value" keyPath="values.windowedWidth" id="m7s-hT-itD">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">IntegerTransformer</string>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SCQ-B9-2iq">
+                                <rect key="frame" x="18" y="210" width="154" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="F8x-Vj-Vfl"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Width:" id="yXV-If-LMo">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4nb-4U-87h">
+                                <rect key="frame" x="234" y="210" width="48" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Height:" id="VWO-6K-Sob">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="j5o-bp-QUU" userLabel="Height Text Field">
+                                <rect key="frame" x="288" y="207" width="50" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="2GU-Zn-BJs"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="yIb-bc-D9t">
+                                    <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="MmL-mK-fQt">
+                                        <real key="minimum" value="0.0"/>
+                                    </numberFormatter>
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <binding destination="5uR-Vk-zwT" name="enabled" keyPath="values.fullScreen" id="lqw-6O-k5s">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
+                                    <binding destination="5uR-Vk-zwT" name="value" keyPath="values.windowedHeight" id="cjN-mI-iMf">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">IntegerTransformer</string>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="OxE-jR-83G" firstAttribute="top" secondItem="zW7-o6-fy6" secondAttribute="bottom" constant="8" symbolic="YES" id="1uk-IL-nPs"/>
+                            <constraint firstItem="r7O-4e-hB7" firstAttribute="leading" secondItem="nS8-fk-vQS" secondAttribute="leading" id="2EK-at-uxb"/>
+                            <constraint firstItem="Uup-ZL-EZL" firstAttribute="baseline" secondItem="zW7-o6-fy6" secondAttribute="baseline" id="2rR-YH-MkS"/>
+                            <constraint firstItem="SCQ-B9-2iq" firstAttribute="leading" secondItem="Uup-ZL-EZL" secondAttribute="leading" id="9KL-nX-x6h"/>
+                            <constraint firstItem="4nb-4U-87h" firstAttribute="leading" secondItem="1sP-kA-bam" secondAttribute="trailing" constant="8" symbolic="YES" id="AwM-oh-JOh"/>
+                            <constraint firstItem="1sP-kA-bam" firstAttribute="leading" secondItem="OxE-jR-83G" secondAttribute="leading" id="Fba-SU-9v8"/>
+                            <constraint firstItem="OxE-jR-83G" firstAttribute="trailing" secondItem="zW7-o6-fy6" secondAttribute="trailing" id="JyS-vr-IvE"/>
+                            <constraint firstItem="zW7-o6-fy6" firstAttribute="top" secondItem="CjN-x6-tfd" secondAttribute="top" constant="20" symbolic="YES" id="Lhi-pW-4X2"/>
+                            <constraint firstItem="j5o-bp-QUU" firstAttribute="leading" secondItem="4nb-4U-87h" secondAttribute="trailing" constant="8" symbolic="YES" id="NyW-e9-eJB"/>
+                            <constraint firstItem="r7O-4e-hB7" firstAttribute="trailing" secondItem="nS8-fk-vQS" secondAttribute="trailing" id="T51-Vn-s2O"/>
+                            <constraint firstItem="Uup-ZL-EZL" firstAttribute="leading" secondItem="CjN-x6-tfd" secondAttribute="leading" constant="20" symbolic="YES" id="UCm-rf-OiZ"/>
+                            <constraint firstItem="zW7-o6-fy6" firstAttribute="leading" secondItem="Uup-ZL-EZL" secondAttribute="trailing" constant="8" symbolic="YES" id="YrQ-yb-Srz"/>
+                            <constraint firstItem="1sP-kA-bam" firstAttribute="baseline" secondItem="4nb-4U-87h" secondAttribute="baseline" id="ZFD-xx-atO"/>
+                            <constraint firstItem="nS8-fk-vQS" firstAttribute="trailing" secondItem="OxE-jR-83G" secondAttribute="trailing" id="Zdn-HF-t45"/>
+                            <constraint firstItem="nS8-fk-vQS" firstAttribute="leading" secondItem="OxE-jR-83G" secondAttribute="leading" id="a7t-gh-nnR"/>
+                            <constraint firstItem="4nb-4U-87h" firstAttribute="baseline" secondItem="j5o-bp-QUU" secondAttribute="baseline" id="dqX-eu-OZD"/>
+                            <constraint firstItem="1sP-kA-bam" firstAttribute="baseline" secondItem="SCQ-B9-2iq" secondAttribute="baseline" id="ila-31-4xf"/>
+                            <constraint firstAttribute="trailing" secondItem="zW7-o6-fy6" secondAttribute="trailing" constant="20" symbolic="YES" id="itk-XR-Lch"/>
+                            <constraint firstItem="r7O-4e-hB7" firstAttribute="top" secondItem="nS8-fk-vQS" secondAttribute="bottom" constant="6" symbolic="YES" id="jdZ-si-V6j"/>
+                            <constraint firstItem="1sP-kA-bam" firstAttribute="leading" secondItem="SCQ-B9-2iq" secondAttribute="trailing" constant="8" symbolic="YES" id="luJ-wU-tcf"/>
+                            <constraint firstItem="nS8-fk-vQS" firstAttribute="top" secondItem="1sP-kA-bam" secondAttribute="bottom" constant="8" symbolic="YES" id="lv7-Tf-K5V"/>
+                            <constraint firstItem="OxE-jR-83G" firstAttribute="leading" secondItem="zW7-o6-fy6" secondAttribute="leading" id="uJ9-SU-tDv"/>
+                            <constraint firstItem="1sP-kA-bam" firstAttribute="top" secondItem="OxE-jR-83G" secondAttribute="bottom" constant="8" symbolic="YES" id="ydd-5B-xqp"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="fce-P7-nce" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="5uR-Vk-zwT"/>
+            </objects>
+            <point key="canvasLocation" x="2236" y="577"/>
         </scene>
     </scenes>
     <resources>
+        <image name="display_icon" width="268" height="233"/>
         <image name="launcher_background" width="670" height="374"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="w7R-IM-pHr"/>
+    </inferredMetricsTieBreakers>
 </document>

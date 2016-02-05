@@ -14,6 +14,9 @@
 		026CB1A71C64007D001A1B8C /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026CB1A61C64007D001A1B8C /* Preferences.swift */; };
 		026CB1A91C64011D001A1B8C /* Launcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026CB1A81C64011D001A1B8C /* Launcher.swift */; };
 		026CB1AB1C64025D001A1B8C /* df in Resources */ = {isa = PBXBuildFile; fileRef = 026CB1AA1C64025D001A1B8C /* df */; };
+		026CB1AD1C6542A4001A1B8C /* IntegerTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026CB1AC1C6542A4001A1B8C /* IntegerTransformer.swift */; };
+		026CB1AF1C654A51001A1B8C /* DisplayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026CB1AE1C654A51001A1B8C /* DisplayMode.swift */; };
+		026CB1B11C654AA3001A1B8C /* DisplayModeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026CB1B01C654AA3001A1B8C /* DisplayModeTransformer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		026CB1A61C64007D001A1B8C /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		026CB1A81C64011D001A1B8C /* Launcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Launcher.swift; sourceTree = "<group>"; };
 		026CB1AA1C64025D001A1B8C /* df */ = {isa = PBXFileReference; lastKnownFileType = folder; name = df; path = ../df; sourceTree = "<group>"; };
+		026CB1AC1C6542A4001A1B8C /* IntegerTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerTransformer.swift; sourceTree = "<group>"; };
+		026CB1AE1C654A51001A1B8C /* DisplayMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayMode.swift; sourceTree = "<group>"; };
+		026CB1B01C654AA3001A1B8C /* DisplayModeTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayModeTransformer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,9 @@
 		026CB1A51C640070001A1B8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				026CB1AE1C654A51001A1B8C /* DisplayMode.swift */,
+				026CB1B01C654AA3001A1B8C /* DisplayModeTransformer.swift */,
+				026CB1AC1C6542A4001A1B8C /* IntegerTransformer.swift */,
 				026CB1A81C64011D001A1B8C /* Launcher.swift */,
 				026CB1A61C64007D001A1B8C /* Preferences.swift */,
 			);
@@ -174,7 +183,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				026CB1911C63F308001A1B8C /* LauncherViewController.swift in Sources */,
+				026CB1B11C654AA3001A1B8C /* DisplayModeTransformer.swift in Sources */,
 				026CB18F1C63F308001A1B8C /* AppDelegate.swift in Sources */,
+				026CB1AD1C6542A4001A1B8C /* IntegerTransformer.swift in Sources */,
+				026CB1AF1C654A51001A1B8C /* DisplayMode.swift in Sources */,
 				026CB1A71C64007D001A1B8C /* Preferences.swift in Sources */,
 				026CB1A91C64011D001A1B8C /* Launcher.swift in Sources */,
 			);
@@ -317,6 +329,7 @@
 				026CB19C1C63F309001A1B8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -57,9 +57,16 @@ function set_mod
 	chmod u+x "${DF_DIR}/df_osx/dwarfort.exe" "${DF_DIR}/df_osx/df" "${DF_DIR}/df_osx/dfhack"
 }
 
+function install_launch_script
+{
+    rm -f "${DF_DIR}/launch.sh"
+    ln "${BASE_DIR}/dfmac/scripts/launch.sh" "${DF_DIR}/launch.sh" 
+}
+
 set -e
-init_df_dir
-get_df
-prepare_df
-build_dfhack
-set_mod
+#init_df_dir
+#get_df
+#prepare_df
+#build_dfhack
+#set_mod
+install_launch_script
