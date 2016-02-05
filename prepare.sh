@@ -64,9 +64,9 @@ function install_launch_script
 }
 
 set -e
-#init_df_dir
-#get_df
-#prepare_df
-#build_dfhack
-#set_mod
+init_df_dir
+get_df
+prepare_df
+build_dfhack
+set_mod
 install_launch_script
