@@ -722,7 +722,7 @@
             <objects>
                 <windowController showSeguePresentationStyle="single" id="ULG-mW-PVX" userLabel="Preferences Window Controller" sceneMemberID="viewController">
                     <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="YYZ-6I-rpM">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="330" y="468" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1600" height="877"/>
@@ -745,6 +745,7 @@
                 <tabViewController selectedTabViewItemIndex="0" tabStyle="toolbar" id="c9K-hx-nrh" userLabel="Preferences Tab View Controller" sceneMemberID="viewController">
                     <tabViewItems>
                         <tabViewItem label="Display" identifier="display" image="display_icon" id="oG9-c6-C8n"/>
+                        <tabViewItem label="DFHack" identifier="DFHack" image="screwdriver" id="RkP-3q-XjC"/>
                     </tabViewItems>
                     <tabView key="tabView" type="noTabsNoBorder" id="tbM-RU-DJf">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
@@ -754,22 +755,23 @@
                     </tabView>
                     <connections>
                         <segue destination="hMe-gF-Zcj" kind="relationship" relationship="tabItems" id="GYm-s3-5FU"/>
+                        <segue destination="6vR-mJ-L0e" kind="relationship" relationship="tabItems" id="h2N-Cd-5Bn"/>
                     </connections>
                 </tabViewController>
                 <customObject id="gt7-pe-5kQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1566" y="758"/>
         </scene>
-        <!--View Controller-->
+        <!--Display View Controller-->
         <scene sceneID="vAg-QI-rbi">
             <objects>
-                <viewController id="hMe-gF-Zcj" sceneMemberID="viewController">
-                    <view key="view" id="CjN-x6-tfd">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                <viewController id="hMe-gF-Zcj" userLabel="Display View Controller" sceneMemberID="viewController">
+                    <view key="view" verticalCompressionResistancePriority="250" id="CjN-x6-tfd">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="155"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Uup-ZL-EZL">
-                                <rect key="frame" x="18" y="262" width="154" height="17"/>
+                                <rect key="frame" x="18" y="117" width="154" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="2em-wC-8Fw"/>
                                 </constraints>
@@ -779,9 +781,9 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zW7-o6-fy6" userLabel="Display Mode Pop Up Button">
-                                <rect key="frame" x="176" y="256" width="257" height="26"/>
-                                <popUpButtonCell key="cell" type="push" title="Vertex Buffer Object (VBO)" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="kMM-fI-5bc" id="cej-Fd-iN2">
+                            <popUpButton verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="zW7-o6-fy6" userLabel="Display Mode Pop Up Button">
+                                <rect key="frame" x="176" y="111" width="257" height="26"/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="cej-Fd-iN2">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="ze2-LD-IfO">
@@ -789,7 +791,7 @@
                                             <menuItem title="Standard" id="g35-Us-3CY"/>
                                             <menuItem title="Text" id="bg0-h6-HgA"/>
                                             <menuItem title="Frame Buffer" id="Iun-U1-N5Y"/>
-                                            <menuItem title="Vertex Buffer Object (VBO)" state="on" id="kMM-fI-5bc">
+                                            <menuItem title="Vertex Buffer Object (VBO)" id="kMM-fI-5bc">
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                             </menuItem>
                                         </items>
@@ -803,8 +805,8 @@
                                     </binding>
                                 </connections>
                             </popUpButton>
-                            <button translatesAutoresizingMaskIntoConstraints="NO" id="OxE-jR-83G">
-                                <rect key="frame" x="176" y="235" width="256" height="18"/>
+                            <button verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="OxE-jR-83G">
+                                <rect key="frame" x="176" y="90" width="256" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="57" id="u7D-Rb-ys8"/>
                                 </constraints>
@@ -816,8 +818,8 @@
                                     <binding destination="5uR-Vk-zwT" name="value" keyPath="values.fullScreen" id="Wbu-sU-95d"/>
                                 </connections>
                             </button>
-                            <button translatesAutoresizingMaskIntoConstraints="NO" id="nS8-fk-vQS">
-                                <rect key="frame" x="176" y="183" width="256" height="18"/>
+                            <button verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="nS8-fk-vQS">
+                                <rect key="frame" x="176" y="38" width="256" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="57" id="rd2-pG-Xur"/>
                                 </constraints>
@@ -829,8 +831,8 @@
                                     <binding destination="5uR-Vk-zwT" name="value" keyPath="values.showFPS" id="03x-Lu-qsh"/>
                                 </connections>
                             </button>
-                            <button translatesAutoresizingMaskIntoConstraints="NO" id="r7O-4e-hB7">
-                                <rect key="frame" x="176" y="163" width="256" height="18"/>
+                            <button verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="r7O-4e-hB7">
+                                <rect key="frame" x="176" y="18" width="256" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="57" id="KlR-Ad-1R0"/>
                                 </constraints>
@@ -842,8 +844,8 @@
                                     <binding destination="5uR-Vk-zwT" name="value" keyPath="values.playIntro" id="71e-4L-Q5B"/>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1sP-kA-bam" userLabel="Width Text Field">
-                                <rect key="frame" x="178" y="207" width="50" height="22"/>
+                            <textField verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="1sP-kA-bam" userLabel="Width Text Field">
+                                <rect key="frame" x="178" y="62" width="50" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="QhJ-X3-Of8"/>
                                 </constraints>
@@ -869,7 +871,7 @@
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SCQ-B9-2iq">
-                                <rect key="frame" x="18" y="210" width="154" height="17"/>
+                                <rect key="frame" x="18" y="65" width="154" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="F8x-Vj-Vfl"/>
                                 </constraints>
@@ -880,7 +882,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4nb-4U-87h">
-                                <rect key="frame" x="234" y="210" width="48" height="17"/>
+                                <rect key="frame" x="234" y="65" width="48" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Height:" id="VWO-6K-Sob">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -888,7 +890,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="j5o-bp-QUU" userLabel="Height Text Field">
-                                <rect key="frame" x="288" y="207" width="50" height="22"/>
+                                <rect key="frame" x="288" y="62" width="50" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="2GU-Zn-BJs"/>
                                 </constraints>
@@ -924,6 +926,7 @@
                             <constraint firstItem="OxE-jR-83G" firstAttribute="trailing" secondItem="zW7-o6-fy6" secondAttribute="trailing" id="JyS-vr-IvE"/>
                             <constraint firstItem="zW7-o6-fy6" firstAttribute="top" secondItem="CjN-x6-tfd" secondAttribute="top" constant="20" symbolic="YES" id="Lhi-pW-4X2"/>
                             <constraint firstItem="j5o-bp-QUU" firstAttribute="leading" secondItem="4nb-4U-87h" secondAttribute="trailing" constant="8" symbolic="YES" id="NyW-e9-eJB"/>
+                            <constraint firstAttribute="bottom" secondItem="r7O-4e-hB7" secondAttribute="bottom" constant="20" symbolic="YES" id="PY5-gv-1B4"/>
                             <constraint firstItem="r7O-4e-hB7" firstAttribute="trailing" secondItem="nS8-fk-vQS" secondAttribute="trailing" id="T51-Vn-s2O"/>
                             <constraint firstItem="Uup-ZL-EZL" firstAttribute="leading" secondItem="CjN-x6-tfd" secondAttribute="leading" constant="20" symbolic="YES" id="UCm-rf-OiZ"/>
                             <constraint firstItem="zW7-o6-fy6" firstAttribute="leading" secondItem="Uup-ZL-EZL" secondAttribute="trailing" constant="8" symbolic="YES" id="YrQ-yb-Srz"/>
@@ -946,10 +949,46 @@
             </objects>
             <point key="canvasLocation" x="2236" y="577"/>
         </scene>
+        <!--DFHack View Controller-->
+        <scene sceneID="emG-HX-DF1">
+            <objects>
+                <viewController id="6vR-mJ-L0e" userLabel="DFHack View Controller" sceneMemberID="viewController">
+                    <view key="view" verticalCompressionResistancePriority="250" id="83V-Ym-9hq">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="54"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="fjz-W1-Ktb">
+                                <rect key="frame" x="148" y="18" width="284" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="keM-39-iGK"/>
+                                </constraints>
+                                <buttonCell key="cell" type="check" title="Enable DFHack" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="3m0-ap-kz2">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="vgU-3E-jV3" name="value" keyPath="values.enableDFHack" id="R0x-gv-53o"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="fjz-W1-Ktb" secondAttribute="bottom" constant="20" symbolic="YES" id="9Q2-xZ-yJa"/>
+                            <constraint firstItem="fjz-W1-Ktb" firstAttribute="leading" secondItem="83V-Ym-9hq" secondAttribute="leading" constant="150" id="gLe-AO-F42"/>
+                            <constraint firstItem="fjz-W1-Ktb" firstAttribute="top" secondItem="83V-Ym-9hq" secondAttribute="top" constant="20" symbolic="YES" id="nU5-S8-JO1"/>
+                            <constraint firstAttribute="trailing" secondItem="fjz-W1-Ktb" secondAttribute="trailing" constant="20" symbolic="YES" id="wSg-xM-Df8"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="MCb-M9-8JD" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="vgU-3E-jV3"/>
+            </objects>
+            <point key="canvasLocation" x="2236" y="964"/>
+        </scene>
     </scenes>
     <resources>
         <image name="display_icon" width="268" height="233"/>
         <image name="launcher_background" width="670" height="374"/>
+        <image name="screwdriver" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="w7R-IM-pHr"/>

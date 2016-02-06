@@ -15,6 +15,8 @@ private enum PreferencesKey: String {
     case playIntro = "playIntro"
     case windowedWidth = "windowedWidth"
     case windowedHeight = "windowedHeight"
+    
+    case enableDFHack = "enableDFHack"
 }
 
 final class Preferences {
@@ -46,6 +48,10 @@ final class Preferences {
         return intForKey(.windowedHeight)
     }
     
+    static var enableDFHack: Bool {
+        return boolForKey(.enableDFHack)
+    }
+    
     private static func boolForKey(key: PreferencesKey) -> Bool {
         return NSUserDefaults.standardUserDefaults().boolForKey(key.rawValue)
     }
@@ -70,7 +76,8 @@ final class Preferences {
             PreferencesKey.showFPS.rawValue: false,
             PreferencesKey.playIntro.rawValue: true,
             PreferencesKey.windowedWidth.rawValue: 80,
-            PreferencesKey.windowedHeight.rawValue: 25
+            PreferencesKey.windowedHeight.rawValue: 25,
+            PreferencesKey.enableDFHack.rawValue: false
         ])
     }
 }

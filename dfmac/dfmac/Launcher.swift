@@ -87,7 +87,7 @@ final class Launcher {
     }
     
     private static func needsTerminal() -> Bool {
-        return Preferences.displayMode == .text
+        return Preferences.displayMode == .text || Preferences.enableDFHack
     }
     
     private static func launchGame() {
@@ -126,6 +126,9 @@ final class Launcher {
                 configuration: [
                     NSWorkspaceLaunchConfigurationArguments: [
                         launchScriptURL().path!
+                    ],
+                    NSWorkspaceLaunchConfigurationEnvironment: [
+                        "DFMAC_LAUNCHER_SCRIPT_NAME": Preferences.enableDFHack ? "dfhack" : "df"
                     ]
                 ]
             )
