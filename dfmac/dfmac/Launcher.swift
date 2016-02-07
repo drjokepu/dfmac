@@ -21,43 +21,9 @@ final class Launcher {
     }
     
     private static func applyPreferences() throws {
-        let initTxt = try NSMutableString(contentsOfURL: Launcher.originalInitTxtURL(), encoding: NSASCIIStringEncoding)
-        updateDisplaySettings(initTxt)
-        try Launcher.emitInitTxt(initTxt as String)
-    }
-    
-    private static func updateDisplaySettings(txt: NSMutableString) {
-        updateSetting(txt, key: "PRINT_MODE", value: Preferences.displayMode.rawValue)
-        updateSetting(txt, key: "WINDOWED", value: boolValue(!Preferences.fullScreen))
-        if (!Preferences.fullScreen) {
-            updateSetting(txt, key: "WINDOWEDX", value: String(Preferences.windowedWidth))
-            updateSetting(txt, key: "WINDOWEDY", value: String(Preferences.windowedHeight))
-        }
-        
-        updateSetting(txt, key: "FPS", value: boolValue(Preferences.showFPS))
-        updateSetting(txt, key: "INTRO", value: boolValue(Preferences.playIntro))
+        try writeInitTxt(originalInitTxtURL(), dest: gameInitTxtURL())
     }
 
-    private static func updateSetting(txt: NSMutableString, key: String, value: String) {
-        do {
-            let exp = try NSRegularExpression(pattern: "^\\[\(key):[^\\]]+\\]$", options: NSRegularExpressionOptions.AnchorsMatchLines)
-            let matches = exp.replaceMatchesInString(txt, options: [], range: NSMakeRange(0, txt.length), withTemplate: "[\(key):\(value)]")
-            if matches == 0 {
-                txt.appendString("\n[\(key):\(value)]")
-            }
-        } catch {
-            print("failed to update setting: \(error)")
-        }
-    }
-    
-    private static func boolValue(value: Bool) -> String {
-        return value ? "YES" : "NO"
-    }
-    
-    private static func emitInitTxt(initTxt: String) throws {
-        try initTxt.writeToURL(Launcher.gameInitTxtURL(), atomically: false, encoding: NSASCIIStringEncoding)
-    }
-    
     private static func originalInitTxtURL() -> NSURL {
         return NSURL(fileURLWithPath: NSString.pathWithComponents([dfURL().path!, "init", "init.txt"]))
     }
