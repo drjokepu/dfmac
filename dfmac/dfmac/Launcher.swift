@@ -6,7 +6,6 @@
 //  Copyright © 2016 Tamas Czinege. All rights reserved.
 //
 
-import AppKit
 import Foundation
 
 final class Launcher {
@@ -84,28 +83,19 @@ final class Launcher {
     }
     
     private static func launchGameInTerminal() {
-        do {
-            let ws = NSWorkspace.sharedWorkspace()
-            guard let terminalAppURL = ws.URLForApplicationWithBundleIdentifier("com.apple.Terminal") else {
-                print("Could not find Terminal.app")
-                return
-            }
-            
-            try ws.launchApplicationAtURL(
-                terminalAppURL,
-                options: .NewInstance,
-                configuration: [
-                    NSWorkspaceLaunchConfigurationArguments: [
-                        launchScriptURL().path!
-                    ],
-                    NSWorkspaceLaunchConfigurationEnvironment: [
-                        "DFMAC_LAUNCHER_SCRIPT_NAME": Preferences.enableDFHack ? "dfhack" : "df"
-                    ]
-                ]
-            )
-        } catch {
-            print("Failed to launch game in terminal: \(error)")
+        let scriptSource =
+            "tell App \"Terminal\"\n" +
+            "  activate\n" +
+            "  do script \"DFMAC_LAUNCHER_SCRIPT_NAME=\(Preferences.enableDFHack ? "dfhack" : "df") \\\"\(launchScriptURL().path!)\\\";exit\"\n" +
+            "end\n"
+        
+        guard let script = NSAppleScript(source: scriptSource) else {
+            print("Failed to parse initialize launcher script")
+            return
         }
+        
+        var errors: NSDictionary? = nil
+        script.executeAndReturnError(&errors) as NSAppleEventDescriptor?
     }
 }
 
