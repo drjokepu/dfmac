@@ -42,6 +42,6 @@ private func boolValue(value: Bool) -> String {
     return value ? "YES" : "NO"
 }
 
-private func emitInitTxt(initTxt: String, dest: NSURL) throws {
-    try initTxt.writeToURL(dest, atomically: false, encoding: NSASCIIStringEncoding)
+private func emitInitTxt(contents: String, dest: NSURL) throws {
+    try contents.writeToURL(dest, atomically: false, encoding: NSASCIIStringEncoding)
 }

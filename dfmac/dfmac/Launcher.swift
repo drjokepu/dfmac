@@ -22,6 +22,7 @@ final class Launcher {
     
     private static func applyPreferences() throws {
         try writeInitTxt(originalInitTxtURL(), dest: gameInitTxtURL())
+        try writeDFHackInit(dfHackInitURL())
     }
 
     private static func originalInitTxtURL() -> NSURL {
@@ -30,6 +31,10 @@ final class Launcher {
     
     private static func gameInitTxtURL() -> NSURL {
         return NSURL(fileURLWithPath: NSString.pathWithComponents([dfURL().path!, "df_osx", "data", "init", "init.txt"]))
+    }
+    
+    private static func dfHackInitURL() -> NSURL {
+        return NSURL(fileURLWithPath: NSString.pathWithComponents([dfURL().path!, "df_osx", "dfhack.init"]))
     }
     
     private static func gameExecutableURL() -> NSURL {

@@ -41,7 +41,8 @@ function prepare_df
 	rm -rf "${DF_DIR}/init"
 	mkdir -p "${DF_DIR}/init"
 	
-	cp -f "${DF_DIR}/df_osx/data/init/init.txt" "${DF_DIR}/init/init.txt"
+	cp -f "${DF_DIR}/df_osx/data/init/dfhack.init-example" "${DF_DIR}/init/dfhack.init"
+    chmod -x "${DF_DIR}/init/dfhack.init"
 }
 
 function build_dfhack
@@ -49,6 +50,7 @@ function build_dfhack
 	cd "${BASE_DIR}/dfhack/build"
 	sh ./build-osx.sh -e port "${DF_DIR}/df_osx"
 	cd "$BASE_DIR"
+	cp -f "${DF_DIR}/df_osx/data/init/init.txt" "${DF_DIR}/init/init.txt" 
 }
 
 function set_mod
