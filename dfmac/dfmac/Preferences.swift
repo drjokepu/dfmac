@@ -17,6 +17,7 @@ private enum PreferencesKey: String {
     case windowedHeight = "windowedHeight"
     
     case enableDFHack = "enableDFHack"
+    case tweaks = "tweaks"
 }
 
 final class Preferences {
@@ -52,6 +53,16 @@ final class Preferences {
         return boolForKey(.enableDFHack)
     }
     
+    static var tweaks: [String] {
+        get {
+            let val: [NSString] =  arrayForKey(.tweaks)
+            return val as! [String]
+        } set(value) {
+            let val: [NSString] = value as [NSString]
+            NSUserDefaults.standardUserDefaults().setObject(val, forKey: PreferencesKey.tweaks.rawValue)
+        }
+    }
+    
     private static func boolForKey(key: PreferencesKey) -> Bool {
         return NSUserDefaults.standardUserDefaults().boolForKey(key.rawValue)
     }
@@ -68,6 +79,14 @@ final class Preferences {
         }
     }
     
+    private static func arrayForKey<T: AnyObject>(key: PreferencesKey) -> [T] {
+        if let arr = NSUserDefaults.standardUserDefaults().arrayForKey(key.rawValue) as? [T] {
+            return arr
+        } else {
+            return []
+        }
+    }
+    
     static func registerDefaults() {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.registerDefaults([
@@ -77,7 +96,26 @@ final class Preferences {
             PreferencesKey.playIntro.rawValue: true,
             PreferencesKey.windowedWidth.rawValue: 80,
             PreferencesKey.windowedHeight.rawValue: 25,
-            PreferencesKey.enableDFHack.rawValue: false
+            PreferencesKey.enableDFHack.rawValue: false,
+            PreferencesKey.tweaks.rawValue: [
+                "stable-cursor",
+                "advmode-contained",
+                "fast-trade",
+                "military-stable-assign",
+                "military-color-assigned",
+                "craft-age-wear",
+                "farm-plot-select",
+                "import-priority-category",
+                "block-labors",
+                "civ-view-agreement",
+                "fps-min",
+                "hide-priority",
+                "kitchen-keys",
+                "kitchen-prefs-empty",
+                "max-wheelbarrow",
+                "shift-8-scroll",
+                "title-start-rename"
+            ]
         ])
     }
 }

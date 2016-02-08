@@ -26,7 +26,9 @@ private func writeKeyBindings(str: NSMutableString) {
 }
 
 private func writeTweaks(str: NSMutableString) {
-    
+    for tweak in Preferences.tweaks {
+        str.appendString("tweak \(tweak)\n")
+    }
 }
 
 private func writePlugins(str: NSMutableString) {

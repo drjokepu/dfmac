@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		02240E521C679A610089F54B /* InitTxtWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02240E511C679A610089F54B /* InitTxtWriter.swift */; };
 		02240E541C679BF60089F54B /* DFHackInitWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02240E531C679BF60089F54B /* DFHackInitWriter.swift */; };
+		02240E571C67DAE40089F54B /* DFHackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02240E561C67DAE40089F54B /* DFHackViewController.swift */; };
+		02240E5A1C67DBC90089F54B /* DFHackConfigEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02240E591C67DBC90089F54B /* DFHackConfigEntry.swift */; };
+		02240E5C1C67DC8C0089F54B /* Tweak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02240E5B1C67DC8C0089F54B /* Tweak.swift */; };
 		026CB18F1C63F308001A1B8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026CB18E1C63F308001A1B8C /* AppDelegate.swift */; };
 		026CB1911C63F308001A1B8C /* LauncherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026CB1901C63F308001A1B8C /* LauncherViewController.swift */; };
 		026CB1931C63F308001A1B8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 026CB1921C63F308001A1B8C /* Assets.xcassets */; };
@@ -24,6 +27,9 @@
 /* Begin PBXFileReference section */
 		02240E511C679A610089F54B /* InitTxtWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitTxtWriter.swift; sourceTree = "<group>"; };
 		02240E531C679BF60089F54B /* DFHackInitWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFHackInitWriter.swift; sourceTree = "<group>"; };
+		02240E561C67DAE40089F54B /* DFHackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFHackViewController.swift; sourceTree = "<group>"; };
+		02240E591C67DBC90089F54B /* DFHackConfigEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFHackConfigEntry.swift; sourceTree = "<group>"; };
+		02240E5B1C67DC8C0089F54B /* Tweak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweak.swift; sourceTree = "<group>"; };
 		026CB18B1C63F308001A1B8C /* DF Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DF Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		026CB18E1C63F308001A1B8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		026CB1901C63F308001A1B8C /* LauncherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncherViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +64,15 @@
 			name = "DF Configuration";
 			sourceTree = "<group>";
 		};
+		02240E581C67DBB00089F54B /* DFHack */ = {
+			isa = PBXGroup;
+			children = (
+				02240E591C67DBC90089F54B /* DFHackConfigEntry.swift */,
+				02240E5B1C67DC8C0089F54B /* Tweak.swift */,
+			);
+			name = DFHack;
+			sourceTree = "<group>";
+		};
 		026CB1821C63F308001A1B8C = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +105,7 @@
 		026CB1A21C640043001A1B8C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				02240E561C67DAE40089F54B /* DFHackViewController.swift */,
 				026CB1901C63F308001A1B8C /* LauncherViewController.swift */,
 			);
 			name = "View Controllers";
@@ -116,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				02240E551C679C010089F54B /* DF Configuration */,
+				02240E581C67DBB00089F54B /* DFHack */,
 				026CB1AE1C654A51001A1B8C /* DisplayMode.swift */,
 				026CB1B01C654AA3001A1B8C /* DisplayModeTransformer.swift */,
 				026CB1AC1C6542A4001A1B8C /* IntegerTransformer.swift */,
@@ -198,12 +215,15 @@
 			files = (
 				02240E541C679BF60089F54B /* DFHackInitWriter.swift in Sources */,
 				026CB1911C63F308001A1B8C /* LauncherViewController.swift in Sources */,
+				02240E5A1C67DBC90089F54B /* DFHackConfigEntry.swift in Sources */,
 				026CB1B11C654AA3001A1B8C /* DisplayModeTransformer.swift in Sources */,
 				026CB18F1C63F308001A1B8C /* AppDelegate.swift in Sources */,
 				026CB1AD1C6542A4001A1B8C /* IntegerTransformer.swift in Sources */,
+				02240E571C67DAE40089F54B /* DFHackViewController.swift in Sources */,
 				026CB1AF1C654A51001A1B8C /* DisplayMode.swift in Sources */,
 				026CB1A71C64007D001A1B8C /* Preferences.swift in Sources */,
 				026CB1A91C64011D001A1B8C /* Launcher.swift in Sources */,
+				02240E5C1C67DC8C0089F54B /* Tweak.swift in Sources */,
 				02240E521C679A610089F54B /* InitTxtWriter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
