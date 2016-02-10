@@ -13,7 +13,7 @@ final class Launcher {
         do {
             try applyPreferences()
         } catch {
-            print("Failed to appy preferences: \(error)")
+            print("Failed to apply preferences: \(error)")
         }
         
         launchGame()

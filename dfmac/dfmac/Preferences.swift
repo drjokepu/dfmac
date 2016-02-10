@@ -22,6 +22,19 @@ private enum PreferencesKey: String {
     case pauseOnSave = "pauseOnSave"
     case pauseOnLoad = "pauseOnLoad"
     
+    case populationCap = "populationCap"
+    case childCap = "childCap"
+    case adultChildRatio = "adultChildRatio"
+    case visitorCap = "visitorCap"
+    case temperature = "temperature"
+    case weather = "weather"
+    case caveIns = "caveIns"
+    case invasions = "invasions"
+    case invasionSoldierCap = "invasionSoldierCap"
+    case invasionMonsterCap = "invasionMonsterCap"
+    case artifacts = "artifacts"
+    case grazeCoefficient = "grazeCoefficient"
+    
     case enableDFHack = "enableDFHack"
     case tweaks = "tweaks"
 }
@@ -91,6 +104,55 @@ final class Preferences {
         return boolForKey(.pauseOnLoad)
     }
     
+    // gameplay
+    static var populationCap: Int {
+        return intForKey(.populationCap)
+    }
+    
+    static var childCap: Int {
+        return intForKey(.childCap)
+    }
+    
+    static var adultChildRatio: Int {
+        return intForKey(.adultChildRatio)
+    }
+    
+    static var visitorCap: Int {
+        return intForKey(.visitorCap)
+    }
+    
+    static var temperature: Bool {
+        return boolForKey(.temperature)
+    }
+    
+    static var weather: Bool {
+        return boolForKey(.weather)
+    }
+    
+    static var caveIns: Bool {
+        return boolForKey(.caveIns)
+    }
+    
+    static var invasions: Bool {
+        return boolForKey(.invasions)
+    }
+    
+    static var invasionSoldierCap: Int {
+        return intForKey(.invasionSoldierCap)
+    }
+    
+    static var invasionMonsterCap: Int {
+        return intForKey(.invasionMonsterCap)
+    }
+    
+    static var artifacts: Bool {
+        return boolForKey(.artifacts)
+    }
+    
+    static var grazeCoefficient: Int {
+        return intForKey(.grazeCoefficient)
+    }
+    
     // dfhack
     static var enableDFHack: Bool {
         return boolForKey(.enableDFHack)
@@ -145,6 +207,19 @@ final class Preferences {
             PreferencesKey.initialSave.rawValue: false,
             PreferencesKey.pauseOnLoad.rawValue: true,
             PreferencesKey.pauseOnSave.rawValue: false,
+            
+            PreferencesKey.populationCap.rawValue: 200,
+            PreferencesKey.childCap.rawValue: 100,
+            PreferencesKey.adultChildRatio.rawValue: 1000,
+            PreferencesKey.visitorCap.rawValue: 100,
+            PreferencesKey.temperature.rawValue: true,
+            PreferencesKey.weather.rawValue: true,
+            PreferencesKey.caveIns.rawValue: true,
+            PreferencesKey.invasions.rawValue: true,
+            PreferencesKey.invasionSoldierCap.rawValue: 120,
+            PreferencesKey.invasionMonsterCap.rawValue: 40,
+            PreferencesKey.artifacts.rawValue: true,
+            PreferencesKey.grazeCoefficient.rawValue: 100,
             
             PreferencesKey.enableDFHack.rawValue: false,
             PreferencesKey.tweaks.rawValue: [
