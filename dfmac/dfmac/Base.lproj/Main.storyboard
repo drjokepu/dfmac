@@ -744,7 +744,8 @@
             <objects>
                 <tabViewController selectedTabViewItemIndex="0" tabStyle="toolbar" id="c9K-hx-nrh" userLabel="Preferences Tab View Controller" sceneMemberID="viewController">
                     <tabViewItems>
-                        <tabViewItem label="Display" identifier="display" image="display_icon" id="oG9-c6-C8n"/>
+                        <tabViewItem label="Display" identifier="display" image="computer" id="oG9-c6-C8n"/>
+                        <tabViewItem label="Saving" identifier="saving" image="floppy" id="r4R-dC-EJy"/>
                         <tabViewItem label="DFHack" identifier="DFHack" image="screwdriver" id="RkP-3q-XjC"/>
                     </tabViewItems>
                     <tabView key="tabView" type="noTabsNoBorder" id="tbM-RU-DJf">
@@ -755,12 +756,141 @@
                     </tabView>
                     <connections>
                         <segue destination="hMe-gF-Zcj" kind="relationship" relationship="tabItems" id="GYm-s3-5FU"/>
+                        <segue destination="EBb-Dg-pam" kind="relationship" relationship="tabItems" id="ouD-wB-Lkv"/>
                         <segue destination="6vR-mJ-L0e" kind="relationship" relationship="tabItems" id="h2N-Cd-5Bn"/>
                     </connections>
                 </tabViewController>
                 <customObject id="gt7-pe-5kQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1566" y="758"/>
+        </scene>
+        <!--Saving View Controller-->
+        <scene sceneID="htn-cc-Gij">
+            <objects>
+                <viewController id="EBb-Dg-pam" userLabel="Saving View Controller" customClass="SavingViewController" customModule="DF_Mac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" verticalCompressionResistancePriority="250" id="AgK-Jc-tpl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="183"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tbd-wE-QRF">
+                                <rect key="frame" x="18" y="146" width="154" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="bNY-K8-2vr"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Auto Save Mode:" id="m4c-yq-oK2">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button identifier="none" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="NWh-uB-imj" userLabel="Auto Save: None">
+                                <rect key="frame" x="175" y="145" width="407" height="18"/>
+                                <buttonCell key="cell" type="radio" title="None" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="2Or-ZA-Llu">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="didSelectAutoSaveMode:" target="EBb-Dg-pam" id="HQ4-g9-2bZ"/>
+                                </connections>
+                            </button>
+                            <button identifier="seasonal" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="AIN-vx-PlQ" userLabel="Auto Save: Seasonal">
+                                <rect key="frame" x="175" y="123" width="407" height="18"/>
+                                <buttonCell key="cell" type="radio" title="Seasonal" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="npU-lW-49s">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="didSelectAutoSaveMode:" target="EBb-Dg-pam" id="hyk-7g-pQr"/>
+                                </connections>
+                            </button>
+                            <button identifier="yearly" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Qbi-T3-8f4" userLabel="Auto Save: Yearly">
+                                <rect key="frame" x="175" y="101" width="407" height="18"/>
+                                <buttonCell key="cell" type="radio" title="Yearly" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="GbL-el-Mgg">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="didSelectAutoSaveMode:" target="EBb-Dg-pam" id="4xR-MP-TVC"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="pJk-PK-L3n">
+                                <rect key="frame" x="174" y="58" width="408" height="18"/>
+                                <buttonCell key="cell" type="check" title="Initial Save" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="mT1-7E-PWU">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="wnI-Of-Th5" name="value" keyPath="values.initialSave" id="Hxu-Di-m66"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Jsq-mG-Vhg">
+                                <rect key="frame" x="174" y="38" width="408" height="18"/>
+                                <buttonCell key="cell" type="check" title="Pause After Save" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="B2b-Bi-ozg">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="wnI-Of-Th5" name="value" keyPath="values.pauseOnSave" id="RS5-GN-dbD"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="DU1-XQ-3Xe">
+                                <rect key="frame" x="174" y="18" width="408" height="18"/>
+                                <buttonCell key="cell" type="check" title="Pause After Load" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="WkW-kX-SoS">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="wnI-Of-Th5" name="value" keyPath="values.pauseOnLoad" id="giv-0H-Dm9"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="5td-Gg-mxT">
+                                <rect key="frame" x="174" y="78" width="408" height="18"/>
+                                <buttonCell key="cell" type="check" title="Auto Backup" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ILb-2Q-yJf">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="wnI-Of-Th5" name="value" keyPath="values.autoBackup" id="7dj-Zx-cd4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="tbd-wE-QRF" firstAttribute="top" secondItem="AgK-Jc-tpl" secondAttribute="top" constant="20" symbolic="YES" id="0vG-dr-sN5"/>
+                            <constraint firstItem="5td-Gg-mxT" firstAttribute="trailing" secondItem="Qbi-T3-8f4" secondAttribute="trailing" id="1c6-Jp-M82"/>
+                            <constraint firstAttribute="trailing" secondItem="NWh-uB-imj" secondAttribute="trailing" constant="20" symbolic="YES" id="1r3-21-v2O"/>
+                            <constraint firstItem="Jsq-mG-Vhg" firstAttribute="trailing" secondItem="pJk-PK-L3n" secondAttribute="trailing" id="5jd-rx-HpK"/>
+                            <constraint firstItem="Qbi-T3-8f4" firstAttribute="leading" secondItem="AIN-vx-PlQ" secondAttribute="leading" id="83b-Ag-zDv"/>
+                            <constraint firstItem="Qbi-T3-8f4" firstAttribute="trailing" secondItem="AIN-vx-PlQ" secondAttribute="trailing" id="AEC-Mq-ty7"/>
+                            <constraint firstItem="DU1-XQ-3Xe" firstAttribute="leading" secondItem="Jsq-mG-Vhg" secondAttribute="leading" id="DDU-p4-iFc"/>
+                            <constraint firstItem="AIN-vx-PlQ" firstAttribute="trailing" secondItem="NWh-uB-imj" secondAttribute="trailing" id="EDd-NU-uDU"/>
+                            <constraint firstItem="5td-Gg-mxT" firstAttribute="top" secondItem="Qbi-T3-8f4" secondAttribute="bottom" constant="8" symbolic="YES" id="HOF-9w-q05"/>
+                            <constraint firstItem="Jsq-mG-Vhg" firstAttribute="top" secondItem="pJk-PK-L3n" secondAttribute="bottom" constant="6" symbolic="YES" id="NeS-Cj-lmX"/>
+                            <constraint firstAttribute="bottom" secondItem="DU1-XQ-3Xe" secondAttribute="bottom" constant="20" symbolic="YES" id="SHv-qW-eRT"/>
+                            <constraint firstItem="pJk-PK-L3n" firstAttribute="leading" secondItem="5td-Gg-mxT" secondAttribute="leading" id="WSK-Ar-s08"/>
+                            <constraint firstItem="NWh-uB-imj" firstAttribute="leading" secondItem="tbd-wE-QRF" secondAttribute="trailing" constant="6" symbolic="YES" id="afE-PR-cnU"/>
+                            <constraint firstItem="AIN-vx-PlQ" firstAttribute="top" secondItem="NWh-uB-imj" secondAttribute="bottom" constant="6" symbolic="YES" id="cs0-zZ-NFY"/>
+                            <constraint firstItem="Jsq-mG-Vhg" firstAttribute="leading" secondItem="pJk-PK-L3n" secondAttribute="leading" id="enJ-NO-5mF"/>
+                            <constraint firstItem="DU1-XQ-3Xe" firstAttribute="trailing" secondItem="Jsq-mG-Vhg" secondAttribute="trailing" id="ewA-jg-Cp5"/>
+                            <constraint firstItem="DU1-XQ-3Xe" firstAttribute="top" secondItem="Jsq-mG-Vhg" secondAttribute="bottom" constant="6" symbolic="YES" id="fVa-ud-lXD"/>
+                            <constraint firstItem="pJk-PK-L3n" firstAttribute="trailing" secondItem="5td-Gg-mxT" secondAttribute="trailing" id="gTP-xM-Xqe"/>
+                            <constraint firstItem="Qbi-T3-8f4" firstAttribute="top" secondItem="AIN-vx-PlQ" secondAttribute="bottom" constant="6" id="hTe-3e-53j"/>
+                            <constraint firstItem="NWh-uB-imj" firstAttribute="baseline" secondItem="tbd-wE-QRF" secondAttribute="baseline" id="iMN-tB-54s"/>
+                            <constraint firstItem="tbd-wE-QRF" firstAttribute="leading" secondItem="AgK-Jc-tpl" secondAttribute="leading" constant="20" symbolic="YES" id="jxo-l9-slM"/>
+                            <constraint firstItem="pJk-PK-L3n" firstAttribute="top" secondItem="5td-Gg-mxT" secondAttribute="bottom" constant="6" symbolic="YES" id="m2w-F3-qVa"/>
+                            <constraint firstItem="5td-Gg-mxT" firstAttribute="leading" secondItem="Qbi-T3-8f4" secondAttribute="leading" id="oG3-QM-lFf"/>
+                            <constraint firstItem="AIN-vx-PlQ" firstAttribute="leading" secondItem="NWh-uB-imj" secondAttribute="leading" id="yu2-AT-PzQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="noneRadioButton" destination="NWh-uB-imj" id="jYk-HW-frv"/>
+                        <outlet property="seasonalRadioButton" destination="AIN-vx-PlQ" id="Mwu-ub-CYX"/>
+                        <outlet property="yearlyRadioButton" destination="Qbi-T3-8f4" id="6ze-Ld-TUE"/>
+                    </connections>
+                </viewController>
+                <customObject id="ATy-4B-kvo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="wnI-Of-Th5"/>
+            </objects>
+            <point key="canvasLocation" x="2161" y="1564"/>
         </scene>
         <!--Display View Controller-->
         <scene sceneID="vAg-QI-rbi">
@@ -1100,7 +1230,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="display_icon" width="268" height="233"/>
+        <image name="computer" width="24" height="24"/>
+        <image name="floppy" width="24" height="24"/>
         <image name="launcher_background" width="670" height="374"/>
         <image name="screwdriver" width="24" height="24"/>
     </resources>

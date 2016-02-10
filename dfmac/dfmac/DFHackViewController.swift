@@ -135,6 +135,7 @@ final class DFHackViewController: NSViewController, NSTableViewDataSource, NSTab
         } else {
             set.remove(tweak.name)
         }
+        
         Preferences.tweaks = [String](set)
     }
 }

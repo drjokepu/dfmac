@@ -16,11 +16,18 @@ private enum PreferencesKey: String {
     case windowedWidth = "windowedWidth"
     case windowedHeight = "windowedHeight"
     
+    case autoSave = "autoSave"
+    case autoBackup = "autoBackup"
+    case initialSave = "initialSave"
+    case pauseOnSave = "pauseOnSave"
+    case pauseOnLoad = "pauseOnLoad"
+    
     case enableDFHack = "enableDFHack"
     case tweaks = "tweaks"
 }
 
 final class Preferences {
+    // display
     static var displayMode: DisplayMode {
         if let mode = DisplayMode(rawValue: stringForKey(.displayMode)) {
             return mode
@@ -49,6 +56,42 @@ final class Preferences {
         return intForKey(.windowedHeight)
     }
     
+    
+    // saving
+    static var autoSave: AutoSaveMode {
+        get {
+            if let mode = AutoSaveMode(rawValue: stringForKey(.autoSave)) {
+                return mode
+            } else {
+                return .none
+            }
+        }
+        set(value) {
+            if value == .none {
+                NSUserDefaults.standardUserDefaults().removeObjectForKey(PreferencesKey.autoSave.rawValue)
+            } else {
+                NSUserDefaults.standardUserDefaults().setObject(value.rawValue, forKey: PreferencesKey.autoSave.rawValue)
+            }
+        }
+    }
+    
+    static var autoBackup: Bool {
+        return boolForKey(.autoBackup)
+    }
+    
+    static var initialSave: Bool {
+        return boolForKey(.initialSave)
+    }
+    
+    static var pauseOnSave: Bool {
+        return boolForKey(.pauseOnSave)
+    }
+    
+    static var pauseOnLoad: Bool {
+        return boolForKey(.pauseOnLoad)
+    }
+    
+    // dfhack
     static var enableDFHack: Bool {
         return boolForKey(.enableDFHack)
     }
@@ -96,6 +139,13 @@ final class Preferences {
             PreferencesKey.playIntro.rawValue: true,
             PreferencesKey.windowedWidth.rawValue: 80,
             PreferencesKey.windowedHeight.rawValue: 25,
+            
+            PreferencesKey.autoSave.rawValue: AutoSaveMode.none.rawValue,
+            PreferencesKey.autoBackup.rawValue: false,
+            PreferencesKey.initialSave.rawValue: false,
+            PreferencesKey.pauseOnLoad.rawValue: true,
+            PreferencesKey.pauseOnSave.rawValue: false,
+            
             PreferencesKey.enableDFHack.rawValue: false,
             PreferencesKey.tweaks.rawValue: [
                 "stable-cursor",

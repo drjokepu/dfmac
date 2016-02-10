@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0205F3A01C6A81A000747AEA /* AutoSaveMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0205F39F1C6A81A000747AEA /* AutoSaveMode.swift */; };
 		02240E521C679A610089F54B /* InitTxtWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02240E511C679A610089F54B /* InitTxtWriter.swift */; };
 		02240E541C679BF60089F54B /* DFHackInitWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02240E531C679BF60089F54B /* DFHackInitWriter.swift */; };
 		02240E571C67DAE40089F54B /* DFHackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02240E561C67DAE40089F54B /* DFHackViewController.swift */; };
 		02240E5A1C67DBC90089F54B /* DFHackConfigEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02240E591C67DBC90089F54B /* DFHackConfigEntry.swift */; };
 		02240E5C1C67DC8C0089F54B /* Tweak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02240E5B1C67DC8C0089F54B /* Tweak.swift */; };
+		0242281B1C6A97C9004D38C2 /* SavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0242281A1C6A97C9004D38C2 /* SavingViewController.swift */; };
+		0264CDEC1C6BAACA0074D5B0 /* DFInitWriterTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0264CDEB1C6BAACA0074D5B0 /* DFInitWriterTools.swift */; };
+		0264CDEE1C6BAB460074D5B0 /* DInitTxtWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0264CDED1C6BAB460074D5B0 /* DInitTxtWriter.swift */; };
 		026CB18F1C63F308001A1B8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026CB18E1C63F308001A1B8C /* AppDelegate.swift */; };
 		026CB1911C63F308001A1B8C /* LauncherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026CB1901C63F308001A1B8C /* LauncherViewController.swift */; };
 		026CB1931C63F308001A1B8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 026CB1921C63F308001A1B8C /* Assets.xcassets */; };
@@ -25,11 +29,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0205F39F1C6A81A000747AEA /* AutoSaveMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoSaveMode.swift; sourceTree = "<group>"; };
 		02240E511C679A610089F54B /* InitTxtWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitTxtWriter.swift; sourceTree = "<group>"; };
 		02240E531C679BF60089F54B /* DFHackInitWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFHackInitWriter.swift; sourceTree = "<group>"; };
 		02240E561C67DAE40089F54B /* DFHackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFHackViewController.swift; sourceTree = "<group>"; };
 		02240E591C67DBC90089F54B /* DFHackConfigEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFHackConfigEntry.swift; sourceTree = "<group>"; };
 		02240E5B1C67DC8C0089F54B /* Tweak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweak.swift; sourceTree = "<group>"; };
+		0242281A1C6A97C9004D38C2 /* SavingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavingViewController.swift; sourceTree = "<group>"; };
+		0264CDEB1C6BAACA0074D5B0 /* DFInitWriterTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFInitWriterTools.swift; sourceTree = "<group>"; };
+		0264CDED1C6BAB460074D5B0 /* DInitTxtWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DInitTxtWriter.swift; sourceTree = "<group>"; };
 		026CB18B1C63F308001A1B8C /* DF Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DF Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		026CB18E1C63F308001A1B8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		026CB1901C63F308001A1B8C /* LauncherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncherViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				02240E531C679BF60089F54B /* DFHackInitWriter.swift */,
+				0264CDEB1C6BAACA0074D5B0 /* DFInitWriterTools.swift */,
+				0264CDED1C6BAB460074D5B0 /* DInitTxtWriter.swift */,
 				02240E511C679A610089F54B /* InitTxtWriter.swift */,
 			);
 			name = "DF Configuration";
@@ -107,6 +117,7 @@
 			children = (
 				02240E561C67DAE40089F54B /* DFHackViewController.swift */,
 				026CB1901C63F308001A1B8C /* LauncherViewController.swift */,
+				0242281A1C6A97C9004D38C2 /* SavingViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -133,6 +144,7 @@
 			children = (
 				02240E551C679C010089F54B /* DF Configuration */,
 				02240E581C67DBB00089F54B /* DFHack */,
+				0205F39F1C6A81A000747AEA /* AutoSaveMode.swift */,
 				026CB1AE1C654A51001A1B8C /* DisplayMode.swift */,
 				026CB1B01C654AA3001A1B8C /* DisplayModeTransformer.swift */,
 				026CB1AC1C6542A4001A1B8C /* IntegerTransformer.swift */,
@@ -213,7 +225,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0242281B1C6A97C9004D38C2 /* SavingViewController.swift in Sources */,
+				0264CDEE1C6BAB460074D5B0 /* DInitTxtWriter.swift in Sources */,
 				02240E541C679BF60089F54B /* DFHackInitWriter.swift in Sources */,
+				0264CDEC1C6BAACA0074D5B0 /* DFInitWriterTools.swift in Sources */,
 				026CB1911C63F308001A1B8C /* LauncherViewController.swift in Sources */,
 				02240E5A1C67DBC90089F54B /* DFHackConfigEntry.swift in Sources */,
 				026CB1B11C654AA3001A1B8C /* DisplayModeTransformer.swift in Sources */,
@@ -223,6 +238,7 @@
 				026CB1AF1C654A51001A1B8C /* DisplayMode.swift in Sources */,
 				026CB1A71C64007D001A1B8C /* Preferences.swift in Sources */,
 				026CB1A91C64011D001A1B8C /* Launcher.swift in Sources */,
+				0205F3A01C6A81A000747AEA /* AutoSaveMode.swift in Sources */,
 				02240E5C1C67DC8C0089F54B /* Tweak.swift in Sources */,
 				02240E521C679A610089F54B /* InitTxtWriter.swift in Sources */,
 			);

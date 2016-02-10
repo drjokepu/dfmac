@@ -15,31 +15,15 @@ func writeInitTxt(src: NSURL, dest: NSURL) throws {
 }
 
 private func updateDisplaySettings(txt: NSMutableString) {
-    updateSetting(txt, key: "PRINT_MODE", value: Preferences.displayMode.rawValue)
-    updateSetting(txt, key: "WINDOWED", value: boolValue(!Preferences.fullScreen))
+    updateInitSetting(txt, key: "PRINT_MODE", value: Preferences.displayMode.rawValue)
+    updateInitSetting(txt, key: "WINDOWED", value: boolValueForInitFile(!Preferences.fullScreen))
     if (!Preferences.fullScreen) {
-        updateSetting(txt, key: "WINDOWEDX", value: String(Preferences.windowedWidth))
-        updateSetting(txt, key: "WINDOWEDY", value: String(Preferences.windowedHeight))
+        updateInitSetting(txt, key: "WINDOWEDX", value: String(Preferences.windowedWidth))
+        updateInitSetting(txt, key: "WINDOWEDY", value: String(Preferences.windowedHeight))
     }
     
-    updateSetting(txt, key: "FPS", value: boolValue(Preferences.showFPS))
-    updateSetting(txt, key: "INTRO", value: boolValue(Preferences.playIntro))
-}
-
-private func updateSetting(txt: NSMutableString, key: String, value: String) {
-    do {
-        let exp = try NSRegularExpression(pattern: "^\\[\(key):[^\\]]+\\]$", options: NSRegularExpressionOptions.AnchorsMatchLines)
-        let matches = exp.replaceMatchesInString(txt, options: [], range: NSMakeRange(0, txt.length), withTemplate: "[\(key):\(value)]")
-        if matches == 0 {
-            txt.appendString("\n[\(key):\(value)]")
-        }
-    } catch {
-        print("failed to update setting: \(error)")
-    }
-}
-
-private func boolValue(value: Bool) -> String {
-    return value ? "YES" : "NO"
+    updateInitSetting(txt, key: "FPS", value: boolValueForInitFile(Preferences.showFPS))
+    updateInitSetting(txt, key: "INTRO", value: boolValueForInitFile(Preferences.playIntro))
 }
 
 private func emitInitTxt(contents: String, dest: NSURL) throws {
