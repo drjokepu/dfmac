@@ -25,3 +25,22 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 }
 
+func appSupportURL() throws -> NSURL {
+    let urls = NSFileManager.defaultManager().URLsForDirectory(NSSearchPathDirectory.ApplicationSupportDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask)
+    if urls.count == 0 {
+        throw AppDelegateError.CannotFindApplicationSupport
+    }
+    
+    let appSupport = urls[0]
+    let bundleFolder = NSURL(fileURLWithPath: NSString.pathWithComponents([appSupport.path!, NSBundle.mainBundle().bundleIdentifier!]), isDirectory: true)
+    
+    if !NSFileManager.defaultManager().fileExistsAtPath(bundleFolder.path!) {
+        try NSFileManager.defaultManager().createDirectoryAtURL(bundleFolder, withIntermediateDirectories: true, attributes: nil)
+    }
+    
+    return bundleFolder
+}
+
+enum AppDelegateError: ErrorType {
+    case CannotFindApplicationSupport
+}

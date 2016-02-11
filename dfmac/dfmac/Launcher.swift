@@ -12,8 +12,9 @@ final class Launcher {
     static func launch() {
         do {
             try applyPreferences()
+            try ensureSaveFolderIsLinked()
         } catch {
-            print("Failed to apply preferences: \(error)")
+            print("Failed to launch: \(error)")
         }
         
         launchGame()
@@ -57,6 +58,21 @@ final class Launcher {
         return NSURL(fileURLWithPath: NSString.pathWithComponents([dfURL().path!, "df_osx", "libs"]))
     }
     
+    private static func localSaveFolderURL() -> NSURL {
+        return NSURL(fileURLWithPath: NSString.pathWithComponents([dfURL().path!, "df_osx", "data", "save"]))
+    }
+    
+    private static func librarySaveFolderURL() throws -> NSURL {
+        let appSupport = try appSupportURL()
+        let saveFolder = NSURL(fileURLWithPath: NSString.pathWithComponents([appSupport.path!, "save", "active"]), isDirectory: true)
+        
+        if !NSFileManager.defaultManager().fileExistsAtPath(saveFolder.path!) {
+            try NSFileManager.defaultManager().createDirectoryAtURL(saveFolder, withIntermediateDirectories: true, attributes: nil)
+        }
+        
+        return saveFolder
+    }
+    
     private static func launchScriptURL() -> NSURL {
         return NSURL(fileURLWithPath: NSString.pathWithComponents([dfURL().path!, "launch.sh"]))
     }
@@ -67,6 +83,20 @@ final class Launcher {
     
     private static func needsTerminal() -> Bool {
         return Preferences.displayMode == .text || Preferences.enableDFHack
+    }
+    
+    private static func ensureSaveFolderIsLinked() throws {
+        try unlinkSaveFolder()
+        let sourceURL = localSaveFolderURL()
+        let targetURL = try librarySaveFolderURL()
+        
+        try NSFileManager.defaultManager().createSymbolicLinkAtURL(sourceURL, withDestinationURL: targetURL)
+    }
+    
+    private static func unlinkSaveFolder() throws {
+        let url = localSaveFolderURL()
+        try NSFileManager.defaultManager().removeItemAtURL(url)
+        
     }
     
     private static func launchGame() {
