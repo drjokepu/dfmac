@@ -23,6 +23,22 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         IntegerTransformer.register()
         DisplayModeTransformer.register()
     }
+    
+    @IBAction func eraseSaves(sender: AnyObject?) {
+        let alert = NSAlert()
+        alert.alertStyle = .CriticalAlertStyle
+        alert.messageText = "Your saves will be erased permanently."
+        alert.addButtonWithTitle("Erase")
+        alert.addButtonWithTitle("Cancel")
+        
+        if alert.runModal() == NSAlertFirstButtonReturn {
+            do {
+                try NSFileManager.defaultManager().removeItemAtURL(Launcher.librarySaveFolderURL())
+            } catch {
+                print("Failed to erase saves: \(error)")
+            }
+        }
+    }
 }
 
 func appSupportURL() throws -> NSURL {

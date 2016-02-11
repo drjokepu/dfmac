@@ -62,7 +62,7 @@ final class Launcher {
         return NSURL(fileURLWithPath: NSString.pathWithComponents([dfURL().path!, "df_osx", "data", "save"]))
     }
     
-    private static func librarySaveFolderURL() throws -> NSURL {
+    static func librarySaveFolderURL() throws -> NSURL {
         let appSupport = try appSupportURL()
         let saveFolder = NSURL(fileURLWithPath: NSString.pathWithComponents([appSupport.path!, "save", "active"]), isDirectory: true)
         
