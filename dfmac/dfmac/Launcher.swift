@@ -21,64 +21,9 @@ final class Launcher {
     }
     
     private static func applyPreferences() throws {
-        try writeInitTxt(originalInitTxtURL(), dest: gameInitTxtURL())
-        try writeDInitTxt(originalDInitTxtURL(), dest: gameDInitTxtURL())
-        try writeDFHackInit(dfHackInitURL())
-    }
-
-    private static func originalInitTxtURL() -> NSURL {
-        return NSURL(fileURLWithPath: NSString.pathWithComponents([dfURL().path!, "init", "init.txt"]))
-    }
-    
-    private static func originalDInitTxtURL() -> NSURL {
-        return NSURL(fileURLWithPath: NSString.pathWithComponents([dfURL().path!, "init", "d_init.txt"]))
-    }
-    
-    private static func gameInitTxtURL() -> NSURL {
-        return NSURL(fileURLWithPath: NSString.pathWithComponents([dfURL().path!, "df_osx", "data", "init", "init.txt"]))
-    }
-    
-    private static func gameDInitTxtURL() -> NSURL {
-        return NSURL(fileURLWithPath: NSString.pathWithComponents([dfURL().path!, "df_osx", "data", "init", "d_init.txt"]))
-    }
-    
-    private static func dfHackInitURL() -> NSURL {
-        return NSURL(fileURLWithPath: NSString.pathWithComponents([dfURL().path!, "df_osx", "dfhack.init"]))
-    }
-    
-    private static func gameExecutableURL() -> NSURL {
-        return NSURL(fileURLWithPath: NSString.pathWithComponents([dfURL().path!, "df_osx", "dwarfort.exe"]))
-    }
-    
-    private static func gameExecutableFolderURL() -> NSURL {
-        return NSURL(fileURLWithPath: NSString.pathWithComponents([dfURL().path!, "df_osx"]))
-    }
-    
-    private static func gameLibsFolderURL() -> NSURL {
-        return NSURL(fileURLWithPath: NSString.pathWithComponents([dfURL().path!, "df_osx", "libs"]))
-    }
-    
-    private static func localSaveFolderURL() -> NSURL {
-        return NSURL(fileURLWithPath: NSString.pathWithComponents([dfURL().path!, "df_osx", "data", "save"]))
-    }
-    
-    static func librarySaveFolderURL() throws -> NSURL {
-        let appSupport = try appSupportURL()
-        let saveFolder = NSURL(fileURLWithPath: NSString.pathWithComponents([appSupport.path!, "save", "active"]), isDirectory: true)
-        
-        if !NSFileManager.defaultManager().fileExistsAtPath(saveFolder.path!) {
-            try NSFileManager.defaultManager().createDirectoryAtURL(saveFolder, withIntermediateDirectories: true, attributes: nil)
-        }
-        
-        return saveFolder
-    }
-    
-    private static func launchScriptURL() -> NSURL {
-        return NSURL(fileURLWithPath: NSString.pathWithComponents([dfURL().path!, "launch.sh"]))
-    }
-    
-    private static func dfURL() -> NSURL {
-        return NSBundle.mainBundle().URLForResource("df", withExtension: nil)!
+        try writeInitTxt(Paths.originalInitTxtURL(), dest: Paths.gameInitTxtURL())
+        try writeDInitTxt(Paths.originalDInitTxtURL(), dest: Paths.gameDInitTxtURL())
+        try writeDFHackInit(Paths.dfHackInitURL())
     }
     
     private static func needsTerminal() -> Bool {
@@ -87,14 +32,15 @@ final class Launcher {
     
     private static func ensureSaveFolderIsLinked() throws {
         try unlinkSaveFolder()
-        let sourceURL = localSaveFolderURL()
-        let targetURL = try librarySaveFolderURL()
+        let sourceURL = Paths.localSaveFolderURL()
+        let targetURL = try Paths.librarySaveFolderURL()
+        try Paths.createDirectoryIfDoesNotExist(targetURL)
         
         try NSFileManager.defaultManager().createSymbolicLinkAtURL(sourceURL, withDestinationURL: targetURL)
     }
     
     private static func unlinkSaveFolder() throws {
-        let url = localSaveFolderURL()
+        let url = Paths.localSaveFolderURL()
         try NSFileManager.defaultManager().removeItemAtURL(url)
         
     }
@@ -108,15 +54,15 @@ final class Launcher {
     }
     
     private static func launchGameDirectly() {
-        let libsDir = Launcher.gameLibsFolderURL().path!
+        let libsDir = Paths.gameLibsFolderURL().path!
         let env = [
             "DYLD_LIBRARY_PATH": libsDir,
             "DYLD_FRAMEWORK_PATH": libsDir
         ]
         
         let task = NSTask()
-        task.launchPath = Launcher.gameExecutableURL().path!
-        task.currentDirectoryPath = Launcher.gameExecutableFolderURL().path!
+        task.launchPath = Paths.gameExecutableURL().path!
+        task.currentDirectoryPath = Paths.gameExecutableFolderURL().path!
         task.environment = env
         task.launch()
     }
@@ -125,7 +71,7 @@ final class Launcher {
         let scriptSource =
             "tell App \"Terminal\"\n" +
             "  activate\n" +
-            "  do script \"DFMAC_LAUNCHER_SCRIPT_NAME=\(Preferences.enableDFHack ? "dfhack" : "df") \\\"\(launchScriptURL().path!)\\\";exit\"\n" +
+            "  do script \"DFMAC_LAUNCHER_SCRIPT_NAME=\(Preferences.enableDFHack ? "dfhack" : "df") \\\"\(Paths.launchScriptURL().path!)\\\";exit\"\n" +
             "end\n"
         
         guard let script = NSAppleScript(source: scriptSource) else {
