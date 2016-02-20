@@ -1400,6 +1400,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
+                                    <action selector="didClickEnableDFHack:" target="6vR-mJ-L0e" id="xkv-pQ-l41"/>
                                     <binding destination="vgU-3E-jV3" name="value" keyPath="values.enableDFHack" id="R0x-gv-53o"/>
                                 </connections>
                             </button>
@@ -1525,6 +1526,9 @@
                             <constraint firstAttribute="trailing" secondItem="fjz-W1-Ktb" secondAttribute="trailing" constant="20" symbolic="YES" id="wSg-xM-Df8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dfhackTable" destination="7VI-sq-fwE" id="0Wr-rg-P17"/>
+                    </connections>
                 </viewController>
                 <customObject id="MCb-M9-8JD" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController representsSharedInstance="YES" id="vgU-3E-jV3"/>

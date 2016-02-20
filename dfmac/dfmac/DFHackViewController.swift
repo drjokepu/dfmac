@@ -20,6 +20,7 @@ final class DFHackViewController: NSViewController, NSTableViewDataSource, NSTab
     }
     
     let tweaks: [Tweak]
+    @IBOutlet var dfhackTable: NSTableView? = nil
     
     required init?(coder: NSCoder) {
         self.tweaks = Tweak.getAll()
@@ -95,6 +96,7 @@ final class DFHackViewController: NSViewController, NSTableViewDataSource, NSTab
         if let checkBox = view.viewWithTag(TweakViewTag.Check.rawValue) as? NSButton {
             checkBox.title = tweak.label
             checkBox.state = Preferences.tweaks.contains(tweak.name) ? NSOnState : NSOffState
+            checkBox.enabled = Preferences.enableDFHack
         }
         
         view.textField?.stringValue = tweak.description
@@ -114,6 +116,10 @@ final class DFHackViewController: NSViewController, NSTableViewDataSource, NSTab
                 return nil
             }
         }
+    }
+    
+    @IBAction func didClickEnableDFHack(sender: AnyObject) {
+        dfhackTable?.reloadData()
     }
     
     @IBAction func didClickCheckBox(sender: AnyObject?) {
