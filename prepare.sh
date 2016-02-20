@@ -1,6 +1,12 @@
 #!/bin/sh
 
-DF_URL="http://www.bay12games.com/dwarves/df_42_05_osx.tar.bz2"
+set -e
+
+PACKAGE_DF_VERSION="`cat dfversion`"
+DF_VERSION=${DF_VERSION:-$PACKAGE_DF_VERSION}
+
+DF_URL_FILENAME_VERSION=`echo $DF_VERSION | sed 's/^0\.//' | sed 's/\./_/'`
+DF_URL="http://www.bay12games.com/dwarves/df_${DF_URL_FILENAME_VERSION}_osx.tar.bz2"
 
 CURRENT_DIR="`pwd`"
 BASE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -53,7 +59,7 @@ function build_dfhack
 	sh ./build-osx.sh -e port "${DF_DIR}/df_osx"
 	cd "$BASE_DIR"
 	
-    cp -f "${DF_DIR}/df_osx/data/init/dfhack.init-example" "${DF_DIR}/init/dfhack.init"
+    cp -f "${DF_DIR}/df_osx/dfhack.init-example" "${DF_DIR}/init/dfhack.init"
     chmod -x "${DF_DIR}/init/dfhack.init"
 }
 
