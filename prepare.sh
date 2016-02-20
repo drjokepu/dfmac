@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
@@ -17,6 +17,7 @@ function init_df_dir
 {
 	rm -rf "$DF_DIR"
 	mkdir -p "$DF_DIR"
+    echo "${DF_VERSION}" > "${DF_DIR}/dfversion"
 }
 
 function get_df
@@ -75,7 +76,6 @@ function install_launch_script
     ln "${BASE_DIR}/dfmac/scripts/launch.sh" "${DF_DIR}/launch.sh" 
 }
 
-set -e
 init_df_dir
 get_df
 prepare_df
