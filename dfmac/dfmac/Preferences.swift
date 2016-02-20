@@ -36,6 +36,7 @@ private enum PreferencesKey: String {
     case grazeCoefficient = "grazeCoefficient"
     
     case enableDFHack = "enableDFHack"
+    case plugins = "plugins"
     case tweaks = "tweaks"
 }
 
@@ -158,6 +159,16 @@ final class Preferences {
         return boolForKey(.enableDFHack)
     }
     
+    static var plugins: [String] {
+        get {
+            let val: [NSString] =  arrayForKey(.plugins)
+            return val as! [String]
+        } set(value) {
+            let val: [NSString] = value as [NSString]
+            NSUserDefaults.standardUserDefaults().setObject(val, forKey: PreferencesKey.plugins.rawValue)
+        }
+    }
+    
     static var tweaks: [String] {
         get {
             let val: [NSString] =  arrayForKey(.tweaks)
@@ -222,6 +233,26 @@ final class Preferences {
             PreferencesKey.grazeCoefficient.rawValue: 100,
             
             PreferencesKey.enableDFHack.rawValue: false,
+            PreferencesKey.plugins.rawValue: [
+                "title-version",
+                "manipulator",
+                "search",
+                "automaterial",
+                "confirm",
+                "dwarfmonitor",
+                "mousequery",
+                "autogems",
+                "automelt",
+                "autotrade",
+                "buildingplan",
+                "resume",
+                "trackstop",
+                "zone",
+                "stocks",
+                "autochop",
+                "stockflow",
+                "stockpiles"
+            ],
             PreferencesKey.tweaks.rawValue: [
                 "stable-cursor",
                 "advmode-contained",

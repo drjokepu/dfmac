@@ -10,12 +10,15 @@ import Cocoa
 
 final class DFHackViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
     private enum ConfigSection {
-        case Tweaks([Tweak])
+        case Bugfixes([DFHackBugfixPlugin])
+        case Tweaks([DFHackTweak])
+        case UIUpgrades([DFHackUIUpgradePlugin])
     }
     
     private enum ConfigRow {
         case GroupHeader(String)
-        case TweakRow(Tweak)
+        case PluginRow(DFHackPlugin)
+        case TweakRow(DFHackTweak)
         case Unknown
     }
     
@@ -29,25 +32,40 @@ final class DFHackViewController: NSViewController, NSTableViewDataSource, NSTab
     
     required init?(coder: NSCoder) {
         self.sections = [
-            .Tweaks(Tweak.getAll())
+            .Bugfixes(DFHackBugfixPlugin.getAll()),
+            .Tweaks(DFHackTweak.getAll()),
+            .UIUpgrades(DFHackUIUpgradePlugin.getAll())
         ]
         
         super.init(coder: coder)
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
-        return sections.reduce(0) { $0 + DFHackViewController.numberOfRowsInSection($1) + 1 }
+        return sections.reduce(0) { $0 + DFHackViewController.numberOfRowsInSection($1) }
     }
     
     private static func numberOfRowsInSection(section: ConfigSection) -> Int {
+        return numberOfItemsInSection(section) + 1
+    }
+    
+    private static func numberOfItemsInSection(section: ConfigSection) -> Int {
         switch section {
+        case .Bugfixes(let bugfixes):
+            return bugfixes.count
         case .Tweaks(let tweaks):
             return tweaks.count
+        case .UIUpgrades(let upgrades):
+            return upgrades.count
         }
     }
     
     func tableView(tableView: NSTableView, isGroupRow row: Int) -> Bool {
-        return row == 0
+        switch rowAtIndex(row) {
+        case .GroupHeader:
+            return true
+        default:
+            return false
+        }
     }
     
     private func rowAtIndex(row: Int) -> ConfigRow {
@@ -79,30 +97,29 @@ final class DFHackViewController: NSViewController, NSTableViewDataSource, NSTab
     
     private static func headerForSection(section: ConfigSection) -> ConfigRow {
         switch section {
-        case .Tweaks(_):
+        case .Bugfixes:
+            return .GroupHeader("Bug Fixes")
+        case .Tweaks:
             return .GroupHeader("Tweaks")
+        case .UIUpgrades:
+            return .GroupHeader("User Interface Upgrades")
         }
     }
     
     private static func rowInSection(section: ConfigSection, index: Int) -> ConfigRow {
         switch section {
+        case .Bugfixes(let bugfixes):
+            return .PluginRow(bugfixes[index])
         case .Tweaks(let tweaks):
             return .TweakRow(tweaks[index])
-        }
-    }
-    
-    private static func tweakAtRow(row: ConfigRow) -> Tweak? {
-        switch row {
-        case .TweakRow(let tweak):
-            return tweak
-        default:
-            return nil
+        case .UIUpgrades(let upgrades):
+            return .PluginRow(upgrades[index])
         }
     }
     
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         switch rowAtIndex(row) {
-        case .TweakRow:
+        case .PluginRow, .TweakRow:
             return 78
         default:
             return 17
@@ -117,6 +134,8 @@ final class DFHackViewController: NSViewController, NSTableViewDataSource, NSTab
         switch rowAtIndex(row) {
         case .GroupHeader(let label):
             return makeGroupRow(tableView, name: label)
+        case .PluginRow(let plugin):
+            return makePluginRow(tableView, plugin: plugin)
         case .TweakRow(let tweak):
             return makeTweakRow(tableView, tweak: tweak)
         default:
@@ -133,7 +152,22 @@ final class DFHackViewController: NSViewController, NSTableViewDataSource, NSTab
         return view
     }
     
-    private func makeTweakRow(tableView: NSTableView, tweak: Tweak) -> NSView? {
+    private func makePluginRow(tableView: NSTableView, plugin: DFHackPlugin) -> NSView? {
+        guard let view = tableView.makeViewWithIdentifier("plugin", owner: self) as? NSTableCellView else {
+            return nil
+        }
+        
+        if let checkBox = view.viewWithTag(TweakViewTag.Check.rawValue) as? NSButton {
+            checkBox.title = plugin.label
+            checkBox.state = Preferences.plugins.contains(plugin.name) ? NSOnState : NSOffState
+            checkBox.enabled = Preferences.enableDFHack
+        }
+        
+        view.textField?.stringValue = plugin.description
+        return view
+    }
+    
+    private func makeTweakRow(tableView: NSTableView, tweak: DFHackTweak) -> NSView? {
         guard let view = tableView.makeViewWithIdentifier("tweak", owner: self) as? NSTableCellView else {
             return nil
         }
@@ -177,13 +211,26 @@ final class DFHackViewController: NSViewController, NSTableViewDataSource, NSTab
         }
         
         switch rowAtIndex(tableView.rowForView(checkBox.superview!)) {
+        case .PluginRow(let plugin):
+            didSelectPlugin(plugin, selected: selected)
         case .TweakRow(let tweak):
             didSelectTweak(tweak, selected: selected)
         default: break
         }
     }
     
-    private func didSelectTweak(tweak: Tweak, selected: Bool) {
+    private func didSelectPlugin(plugin: DFHackPlugin, selected: Bool) {
+        var set = Set(Preferences.plugins)
+        if selected {
+            set.insert(plugin.name)
+        } else {
+            set.remove(plugin.name)
+        }
+        
+        Preferences.plugins = [String](set)
+    }
+    
+    private func didSelectTweak(tweak: DFHackTweak, selected: Bool) {
         var set = Set(Preferences.tweaks)
         if selected {
             set.insert(tweak.name)

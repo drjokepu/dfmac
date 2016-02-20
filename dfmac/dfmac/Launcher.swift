@@ -41,8 +41,9 @@ final class Launcher {
     
     private static func unlinkSaveFolder() throws {
         let url = Paths.localSaveFolderURL()
-        try NSFileManager.defaultManager().removeItemAtURL(url)
-        
+        if NSFileManager.defaultManager().fileExistsAtPath(url.path!) {
+            try NSFileManager.defaultManager().removeItemAtURL(url)
+        }
     }
     
     private static func launchGame() {

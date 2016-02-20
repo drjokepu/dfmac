@@ -32,7 +32,9 @@ private func writeTweaks(str: NSMutableString) {
 }
 
 private func writePlugins(str: NSMutableString) {
-    
+    for plugin in Preferences.plugins {
+        str.appendString("enable \(plugin)\n")
+    }
 }
 
 private func writeScripts(str: NSMutableString) {

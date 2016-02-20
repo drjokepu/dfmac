@@ -33,7 +33,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         
         if alert.runModal() == NSAlertFirstButtonReturn {
             do {
-                try NSFileManager.defaultManager().removeItemAtURL(Paths.librarySaveFolderURL())
+                let url = try Paths.librarySaveFolderURL()
+                if NSFileManager.defaultManager().fileExistsAtPath(url.path!) {
+                    try NSFileManager.defaultManager().removeItemAtURL(url)
+                }
             } catch {
                 print("Failed to erase saves: \(error)")
             }
