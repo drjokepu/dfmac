@@ -659,8 +659,19 @@
                                     <segue destination="ULG-mW-PVX" kind="show" id="w7R-IM-pHr"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="URf-k8-1Ve">
+                                <rect key="frame" x="18" y="156" width="634" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Dwaft Fortress: 0.00.0 DFHack: 0.00.0" id="dtL-Eg-tlM">
+                                    <font key="font" size="13" name="HelveticaNeue-UltraLight"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="versionLabel" destination="URf-k8-1Ve" id="yr0-WM-R8R"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -822,12 +833,12 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <binding destination="gAv-zh-oAv" name="enabled" keyPath="values.invasions" id="hec-ne-XH6"/>
                                     <binding destination="gAv-zh-oAv" name="value" keyPath="values.invasionSoldierCap" id="ipk-2k-i9b">
                                         <dictionary key="options">
                                             <string key="NSValueTransformerName">IntegerTransformer</string>
                                         </dictionary>
                                     </binding>
+                                    <binding destination="gAv-zh-oAv" name="enabled" keyPath="values.invasions" id="hec-ne-XH6"/>
                                 </connections>
                             </textField>
                             <textField verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="5MA-hz-u44" userLabel="Max Invading Soldiers Text Field">
@@ -844,14 +855,14 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <binding destination="gAv-zh-oAv" name="value" keyPath="values.invasionMonsterCap" id="Skk-U5-wja">
-                                        <dictionary key="options">
-                                            <string key="NSValueTransformerName">IntegerTransformer</string>
-                                        </dictionary>
-                                    </binding>
                                     <binding destination="5uR-Vk-zwT" name="enabled" keyPath="values.fullScreen" id="hZw-wD-Cqw">
                                         <dictionary key="options">
                                             <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
+                                    <binding destination="gAv-zh-oAv" name="value" keyPath="values.invasionMonsterCap" id="Skk-U5-wja">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">IntegerTransformer</string>
                                         </dictionary>
                                     </binding>
                                 </connections>
@@ -1533,6 +1544,6 @@
         <image name="screwdriver" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nMi-VD-JNm"/>
+        <segue reference="w7R-IM-pHr"/>
     </inferredMetricsTieBreakers>
 </document>

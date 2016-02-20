@@ -17,7 +17,25 @@ function init_df_dir
 {
 	rm -rf "$DF_DIR"
 	mkdir -p "$DF_DIR"
-    echo "${DF_VERSION}" > "${DF_DIR}/dfversion"
+}
+
+function init_version_files
+{
+    init_df_version_file
+    init_dfhack_version_file
+}
+
+function init_df_version_file
+{
+    echo -n "${DF_VERSION}" > "${DF_DIR}/dfversion"
+}
+
+function init_dfhack_version_file
+{
+    cd "${BASE_DIR}/dfhack"
+    local DFHACK_VERSION=`git describe --tags`
+    cd "${CURRENT_DIR}"
+    echo -n "${DFHACK_VERSION}" > "${DF_DIR}/dfhackversion"
 }
 
 function get_df
@@ -82,3 +100,4 @@ prepare_df
 build_dfhack
 set_mod
 install_launch_script
+init_version_files

@@ -27,6 +27,7 @@
 		026CB1AF1C654A51001A1B8C /* DisplayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026CB1AE1C654A51001A1B8C /* DisplayMode.swift */; };
 		026CB1B11C654AA3001A1B8C /* DisplayModeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026CB1B01C654AA3001A1B8C /* DisplayModeTransformer.swift */; };
 		02962F171C7893420019BAF2 /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02962F161C7893420019BAF2 /* Paths.swift */; };
+		02962F191C78982C0019BAF2 /* Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02962F181C78982C0019BAF2 /* Versions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		026CB1AE1C654A51001A1B8C /* DisplayMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayMode.swift; sourceTree = "<group>"; };
 		026CB1B01C654AA3001A1B8C /* DisplayModeTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayModeTransformer.swift; sourceTree = "<group>"; };
 		02962F161C7893420019BAF2 /* Paths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
+		02962F181C78982C0019BAF2 /* Versions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Versions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				026CB1A81C64011D001A1B8C /* Launcher.swift */,
 				02962F161C7893420019BAF2 /* Paths.swift */,
 				026CB1A61C64007D001A1B8C /* Preferences.swift */,
+				02962F181C78982C0019BAF2 /* Versions.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				0264CDEE1C6BAB460074D5B0 /* DInitTxtWriter.swift in Sources */,
 				02240E541C679BF60089F54B /* DFHackInitWriter.swift in Sources */,
 				02962F171C7893420019BAF2 /* Paths.swift in Sources */,
+				02962F191C78982C0019BAF2 /* Versions.swift in Sources */,
 				0264CDEC1C6BAACA0074D5B0 /* DFInitWriterTools.swift in Sources */,
 				026CB1911C63F308001A1B8C /* LauncherViewController.swift in Sources */,
 				02240E5A1C67DBC90089F54B /* DFHackConfigEntry.swift in Sources */,

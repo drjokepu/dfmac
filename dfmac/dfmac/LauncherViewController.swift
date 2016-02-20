@@ -9,10 +9,11 @@
 import Cocoa
 
 final class LauncherViewController: NSViewController {
+    @IBOutlet var versionLabel: NSTextField?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        versionLabel?.stringValue = "Dwarf Fortress: \(Versions.df) DFHack: \(Versions.dfHack)"
     }
 
     override var representedObject: AnyObject? {
