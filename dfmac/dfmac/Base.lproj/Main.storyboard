@@ -855,11 +855,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <binding destination="5uR-Vk-zwT" name="enabled" keyPath="values.fullScreen" id="hZw-wD-Cqw">
-                                        <dictionary key="options">
-                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                        </dictionary>
-                                    </binding>
+                                    <binding destination="gAv-zh-oAv" name="enabled" keyPath="values.invasions" id="WoC-Vz-2Ev"/>
                                     <binding destination="gAv-zh-oAv" name="value" keyPath="values.invasionMonsterCap" id="Skk-U5-wja">
                                         <dictionary key="options">
                                             <string key="NSValueTransformerName">IntegerTransformer</string>
