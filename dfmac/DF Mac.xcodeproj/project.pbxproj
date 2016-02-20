@@ -31,6 +31,8 @@
 		02962F1B1C78C2200019BAF2 /* DFHackPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02962F1A1C78C2200019BAF2 /* DFHackPlugin.swift */; };
 		02962F1D1C78C3020019BAF2 /* DFHackBugfixPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02962F1C1C78C3020019BAF2 /* DFHackBugfixPlugin.swift */; };
 		02962F1F1C78CA210019BAF2 /* DFHackUIUpgradePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02962F1E1C78CA210019BAF2 /* DFHackUIUpgradePlugin.swift */; };
+		02962F211C791BB30019BAF2 /* DispatchQueues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02962F201C791BB30019BAF2 /* DispatchQueues.swift */; };
+		02962F251C7926910019BAF2 /* LaunchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02962F241C7926910019BAF2 /* LaunchingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		02962F1A1C78C2200019BAF2 /* DFHackPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFHackPlugin.swift; sourceTree = "<group>"; };
 		02962F1C1C78C3020019BAF2 /* DFHackBugfixPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFHackBugfixPlugin.swift; sourceTree = "<group>"; };
 		02962F1E1C78CA210019BAF2 /* DFHackUIUpgradePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFHackUIUpgradePlugin.swift; sourceTree = "<group>"; };
+		02962F201C791BB30019BAF2 /* DispatchQueues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchQueues.swift; sourceTree = "<group>"; };
+		02962F241C7926910019BAF2 /* LaunchingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,7 @@
 			children = (
 				02240E561C67DAE40089F54B /* DFHackViewController.swift */,
 				026CB1901C63F308001A1B8C /* LauncherViewController.swift */,
+				02962F241C7926910019BAF2 /* LaunchingViewController.swift */,
 				0242281A1C6A97C9004D38C2 /* SavingViewController.swift */,
 			);
 			name = "View Controllers";
@@ -140,6 +145,7 @@
 			children = (
 				026CB1971C63F309001A1B8C /* Info.plist */,
 				026CB18E1C63F308001A1B8C /* AppDelegate.swift */,
+				02962F201C791BB30019BAF2 /* DispatchQueues.swift */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -240,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02962F251C7926910019BAF2 /* LaunchingViewController.swift in Sources */,
 				0242281B1C6A97C9004D38C2 /* SavingViewController.swift in Sources */,
 				0264CDEE1C6BAB460074D5B0 /* DInitTxtWriter.swift in Sources */,
 				02240E541C679BF60089F54B /* DFHackInitWriter.swift in Sources */,
@@ -255,6 +262,7 @@
 				02240E571C67DAE40089F54B /* DFHackViewController.swift in Sources */,
 				02962F1B1C78C2200019BAF2 /* DFHackPlugin.swift in Sources */,
 				026CB1AF1C654A51001A1B8C /* DisplayMode.swift in Sources */,
+				02962F211C791BB30019BAF2 /* DispatchQueues.swift in Sources */,
 				026CB1A71C64007D001A1B8C /* Preferences.swift in Sources */,
 				026CB1A91C64011D001A1B8C /* Launcher.swift in Sources */,
 				02962F1F1C78CA210019BAF2 /* DFHackUIUpgradePlugin.swift in Sources */,

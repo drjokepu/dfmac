@@ -625,7 +625,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="670" height="374"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nii-l7-F6S" userLabel="Bacgrkound Image View">
+                            <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nii-l7-F6S" userLabel="Background Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="670" height="374"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="launcher_background" id="dTs-5d-Ibr"/>
                             </imageView>
@@ -676,6 +676,50 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="74" y="844"/>
+        </scene>
+        <!--Launching View Controller-->
+        <scene sceneID="coi-GH-thE">
+            <objects>
+                <viewController storyboardIdentifier="launchingViewController" id="D8p-oX-f1t" userLabel="Launching View Controller" customClass="LaunchingViewController" customModule="DF_Mac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" verticalCompressionResistancePriority="250" id="nRL-99-wNU">
+                        <rect key="frame" x="0.0" y="0.0" width="290" height="83"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="eXs-tk-aru">
+                                <rect key="frame" x="18" y="46" width="254" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="175" id="WLf-XN-dlj"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Launching Dwarf Fortress…" id="cgv-p4-b5R">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <progressIndicator wantsLayer="YES" verticalHuggingPriority="1000" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="2RZ-Wn-TbD">
+                                <rect key="frame" x="20" y="19" width="250" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="1GS-Zn-LjQ"/>
+                                </constraints>
+                            </progressIndicator>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="2RZ-Wn-TbD" secondAttribute="bottom" constant="20" symbolic="YES" id="4Ea-8m-z2q"/>
+                            <constraint firstAttribute="trailing" secondItem="eXs-tk-aru" secondAttribute="trailing" constant="20" symbolic="YES" id="H28-J2-KWq"/>
+                            <constraint firstItem="2RZ-Wn-TbD" firstAttribute="leading" secondItem="nRL-99-wNU" secondAttribute="leading" constant="20" symbolic="YES" id="eKA-12-gCG"/>
+                            <constraint firstAttribute="trailing" secondItem="2RZ-Wn-TbD" secondAttribute="trailing" constant="20" symbolic="YES" id="fW6-5C-Zk9"/>
+                            <constraint firstItem="eXs-tk-aru" firstAttribute="leading" secondItem="nRL-99-wNU" secondAttribute="leading" constant="20" symbolic="YES" id="lmS-Tj-1As"/>
+                            <constraint firstItem="eXs-tk-aru" firstAttribute="top" secondItem="nRL-99-wNU" secondAttribute="top" constant="20" symbolic="YES" id="mqa-Do-lq0"/>
+                            <constraint firstItem="2RZ-Wn-TbD" firstAttribute="top" secondItem="eXs-tk-aru" secondAttribute="bottom" constant="8" symbolic="YES" id="vlQ-Hd-K3n"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="progress" destination="2RZ-Wn-TbD" id="cq5-G3-BSA"/>
+                    </connections>
+                </viewController>
+                <customObject id="6mh-5m-eK3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="74" y="1162.5"/>
         </scene>
         <!--Preferences Window Controller-->
         <scene sceneID="vXz-tT-DaR">

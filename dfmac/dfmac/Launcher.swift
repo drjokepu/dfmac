@@ -10,26 +10,43 @@ import Foundation
 
 private let hardLinkQueryKeys = [NSURLNameKey, NSURLIsDirectoryKey, NSURLIsSymbolicLinkKey]
 
+let LAUNCH_STARTED = "launch-started"
+let LAUNCH_FINISHED = "launch-finished"
+
 final class Launcher {
     static func launch() {
-        do {
-            let sessionURL = try beginSession()
-            try applyPreferences(sessionURL)
-            try ensureSaveFolderIsLinked(sessionURL)
-            launchGame(sessionURL)
-        } catch {
-            print("Failed to launch: \(error)")
-        }
+        beginSession() { launch(withSessionURL: $0) }
+        NSNotificationCenter.defaultCenter().postNotificationName(LAUNCH_STARTED, object: nil)
     }
     
-    @warn_unused_result private static func beginSession() throws -> NSURL {
-        let sessionURL = try Paths.makeUniqueSessionDirectory()
-
+    private static func launch(withSessionURL sessionURL: NSURL) {
+        launchGame(sessionURL)
+    }
+    
+    private static func beginSession(callback: (sessionURL: NSURL) -> Void) {
+        dispatch_async(launcherQueue, { () -> Void in
+            autoreleasepool {
+                do {
+                    let sessionURL = try Paths.makeUniqueSessionDirectory()
+                    try beginSessionSync(sessionURL)
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        NSNotificationCenter.defaultCenter().postNotificationName(LAUNCH_FINISHED, object: nil)
+                        launch(withSessionURL: sessionURL)
+                    })
+                } catch {
+                    print("Failed to launch: \(error)")
+                }
+            }
+        })
+    }
+    
+    private static func beginSessionSync(sessionURL: NSURL) throws {
         let df0 = Paths.dfURL()
         let df1 = Paths.dfURL(forSession: sessionURL)
         try hardLinkTree(from: df0, to: df1)
-
-        return sessionURL
+        
+        try applyPreferences(sessionURL)
+        try ensureSaveFolderIsLinked(sessionURL)
     }
     
     private static func hardLinkTree(from t0: NSURL, to t1: NSURL) throws {
