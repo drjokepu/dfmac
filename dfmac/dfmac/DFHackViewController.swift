@@ -9,6 +9,10 @@
 import Cocoa
 
 final class DFHackViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
+    private enum ConfigSection {
+        case Tweaks([Tweak])
+    }
+    
     private enum ConfigRow {
         case GroupHeader(String)
         case TweakRow(Tweak)
@@ -19,16 +23,27 @@ final class DFHackViewController: NSViewController, NSTableViewDataSource, NSTab
         case Check = 2001
     }
     
-    let tweaks: [Tweak]
+    private let sections: [ConfigSection]
+    
     @IBOutlet var dfhackTable: NSTableView? = nil
     
     required init?(coder: NSCoder) {
-        self.tweaks = Tweak.getAll()
+        self.sections = [
+            .Tweaks(Tweak.getAll())
+        ]
+        
         super.init(coder: coder)
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
-        return 1 + tweaks.count
+        return sections.reduce(0) { $0 + DFHackViewController.numberOfRowsInSection($1) + 1 }
+    }
+    
+    private static func numberOfRowsInSection(section: ConfigSection) -> Int {
+        switch section {
+        case .Tweaks(let tweaks):
+            return tweaks.count
+        }
     }
     
     func tableView(tableView: NSTableView, isGroupRow row: Int) -> Bool {
@@ -36,13 +51,43 @@ final class DFHackViewController: NSViewController, NSTableViewDataSource, NSTab
     }
     
     private func rowAtIndex(row: Int) -> ConfigRow {
-        switch row {
-        case 0:
-            return .GroupHeader("Tweaks")
-        case 1 ..< tweaks.count + 1:
-            return .TweakRow(tweaks[row - 1])
-        default:
+        var rowCount = 0
+        var rowSectionMaybe: ConfigSection? = nil
+        var indexInSection = 0
+        
+        for section in sections {
+            let nextRowCount = rowCount + DFHackViewController.numberOfRowsInSection(section)
+            if row >= rowCount && row < nextRowCount {
+                rowSectionMaybe = section
+                indexInSection = row - rowCount
+                break
+            } else {
+                rowCount = nextRowCount
+            }
+        }
+        
+        guard let section = rowSectionMaybe else {
             return .Unknown
+        }
+        
+        if indexInSection == 0 {
+            return DFHackViewController.headerForSection(section)
+        } else {
+            return DFHackViewController.rowInSection(section, index: indexInSection - 1)
+        }
+    }
+    
+    private static func headerForSection(section: ConfigSection) -> ConfigRow {
+        switch section {
+        case .Tweaks(_):
+            return .GroupHeader("Tweaks")
+        }
+    }
+    
+    private static func rowInSection(section: ConfigSection, index: Int) -> ConfigRow {
+        switch section {
+        case .Tweaks(let tweaks):
+            return .TweakRow(tweaks[index])
         }
     }
     
@@ -103,9 +148,7 @@ final class DFHackViewController: NSViewController, NSTableViewDataSource, NSTab
         return view
     }
     
-    /**
-     Find the first superview that is an instance of NSTableView
-    */
+    /**  Find the first superview that is an instance of NSTableView */
     private static func findTableViewSuperView(view: NSView) -> NSTableView? {
         if let tableView = view as? NSTableView {
             return tableView
@@ -127,16 +170,22 @@ final class DFHackViewController: NSViewController, NSTableViewDataSource, NSTab
             return
         }
         
+        let selected = (checkBox.state == NSOnState)
+        
         guard let tableView = DFHackViewController.findTableViewSuperView(checkBox) else {
             return
         }
         
-        guard let tweak = DFHackViewController.tweakAtRow(rowAtIndex(tableView.rowForView(checkBox.superview!))) else {
-            return
+        switch rowAtIndex(tableView.rowForView(checkBox.superview!)) {
+        case .TweakRow(let tweak):
+            didSelectTweak(tweak, selected: selected)
+        default: break
         }
-        
+    }
+    
+    private func didSelectTweak(tweak: Tweak, selected: Bool) {
         var set = Set(Preferences.tweaks)
-        if checkBox.state == NSOnState {
+        if selected {
             set.insert(tweak.name)
         } else {
             set.remove(tweak.name)
