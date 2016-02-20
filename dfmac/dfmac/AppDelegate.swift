@@ -13,6 +13,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         AppDelegate.registerTransformers()
         Preferences.registerDefaults()
+        AppDelegate.registerCleanup()
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
@@ -22,6 +23,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private static func registerTransformers() {
         IntegerTransformer.register()
         DisplayModeTransformer.register()
+    }
+    
+    private static func registerCleanup() {
+        atexit { cleanupSessions() }
     }
     
     @IBAction func eraseSaves(sender: AnyObject?) {
@@ -39,6 +44,19 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 }
             } catch {
                 print("Failed to erase saves: \(error)")
+            }
+        }
+    }
+}
+
+private func cleanupSessions() {
+    autoreleasepool {
+        let sessionsDir = Paths.sessionsDirectory()
+        if NSFileManager.defaultManager().fileExistsAtPath(sessionsDir.path!) {
+            do {
+                try NSFileManager.defaultManager().removeItemAtURL(sessionsDir)
+            } catch {
+                print("Failed to clean up temporary sessions: \(error)")
             }
         }
     }
