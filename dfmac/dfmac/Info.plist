@@ -32,5 +32,7 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>SUFeedURL</key>
+	<string>https://drjokepu.github.io/dfmac/sparke-feed.xml</string>
 </dict>
 </plist>

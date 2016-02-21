@@ -10,6 +10,7 @@
     "16DB1E444CA9176903CC160C1F9127B11100B839" : 0,
     "54E859708B92FFBDC7C0921F968450FEDAD40ED2" : 0,
     "8F55E17F2F3527220EF0F4BA59372CDCFE0DE8CB" : 0,
+    "EF1CF5E1F342919DE309B5C9DAEDDCF1D12D0402" : 0,
     "EABBC93E2D74D1919459030330BC52EE3D4690C5" : 0,
     "9EA79D38E7F500D93F429B4FD2AE8A6D0D617CF9" : 0,
     "74D352856E2C1E2CC2723185F85DECEB2D15D852" : 0,
@@ -30,6 +31,7 @@
     "16DB1E444CA9176903CC160C1F9127B11100B839" : "dfmac\/df\/graphics_sets\/dfgraphics\/Shizzle\/",
     "54E859708B92FFBDC7C0921F968450FEDAD40ED2" : "dfmac\/",
     "8F55E17F2F3527220EF0F4BA59372CDCFE0DE8CB" : "dfmac\/df\/graphics_sets\/dfgraphics\/Grim-Fortress\/",
+    "EF1CF5E1F342919DE309B5C9DAEDDCF1D12D0402" : "dfmac\/sparkle\/",
     "EABBC93E2D74D1919459030330BC52EE3D4690C5" : "dfmac\/df\/graphics_sets\/dfgraphics\/Taffer\/",
     "9EA79D38E7F500D93F429B4FD2AE8A6D0D617CF9" : "dfmac\/df\/graphics_sets\/dfgraphics\/Afro\/",
     "74D352856E2C1E2CC2723185F85DECEB2D15D852" : "dfmac\/df\/graphics_sets\/dfgraphics\/Wanderlust\/",
@@ -120,6 +122,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fricy\/Taffer",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EABBC93E2D74D1919459030330BC52EE3D4690C5"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sparkle-project\/Sparkle.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EF1CF5E1F342919DE309B5C9DAEDDCF1D12D0402"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fricy\/CLA",

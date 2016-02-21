@@ -22,6 +22,12 @@
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Check for Updates…" id="EYM-p1-rhJ">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="checkForUpdates:" target="DTX-9m-mxJ" id="HcF-ec-AhK"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                                         <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
                                             <connections>
@@ -597,6 +603,7 @@
                     </connections>
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="DF_Mac" customModuleProvider="target"/>
+                <customObject id="DTX-9m-mxJ" customClass="SUUpdater"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -1452,7 +1459,7 @@ DQ
                             </textField>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xtc-vQ-WED" userLabel="Graphics Set Pop Up Button">
                                 <rect key="frame" x="276" y="354" width="312" height="26"/>
-                                <popUpButtonCell key="cell" type="push" title="None" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="glZ-LK-Ais" id="BNH-HO-phU">
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="BNH-HO-phU">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="NmH-gb-2bO">
@@ -1554,12 +1561,12 @@ DQ
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
+                                    <binding destination="5uR-Vk-zwT" name="value" keyPath="values.enableCustomFonts" id="luq-R2-lMk"/>
                                     <binding destination="5uR-Vk-zwT" name="enabled" keyPath="values.graphicsSet" id="dYn-JT-B1v">
                                         <dictionary key="options">
                                             <string key="NSValueTransformerName">GraphicsSetSelectedTransformer</string>
                                         </dictionary>
                                     </binding>
-                                    <binding destination="5uR-Vk-zwT" name="value" keyPath="values.enableCustomFonts" id="luq-R2-lMk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1809,6 +1816,6 @@ DQ
         <image name="screwdriver" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="w7R-IM-pHr"/>
+        <segue reference="nMi-VD-JNm"/>
     </inferredMetricsTieBreakers>
 </document>

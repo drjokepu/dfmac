@@ -17,6 +17,8 @@
 		02240E571C67DAE40089F54B /* DFHackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02240E561C67DAE40089F54B /* DFHackViewController.swift */; };
 		02240E5A1C67DBC90089F54B /* DFHackConfigEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02240E591C67DBC90089F54B /* DFHackConfigEntry.swift */; };
 		02240E5C1C67DC8C0089F54B /* DFHackTweak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02240E5B1C67DC8C0089F54B /* DFHackTweak.swift */; };
+		022CC1ED1C7A66BA0020139B /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022CC1E41C7A66650020139B /* Sparkle.framework */; };
+		022CC1EF1C7A67630020139B /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 022CC1E41C7A66650020139B /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0242281B1C6A97C9004D38C2 /* SavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0242281A1C6A97C9004D38C2 /* SavingViewController.swift */; };
 		02566C7B1C7A24A40023663E /* CLA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02566C7A1C7A24A40023663E /* CLA.swift */; };
 		02566C7E1C7A2FBF0023663E /* Afro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02566C7D1C7A2FBF0023663E /* Afro.swift */; };
@@ -59,6 +61,57 @@
 		02D5F1281C7A1DAD00A49E58 /* GraphicsSetPreviewImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D5F1271C7A1DAD00A49E58 /* GraphicsSetPreviewImageTransformer.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		022CC1E31C7A66650020139B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 022CC1D81C7A66650020139B /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = Sparkle;
+		};
+		022CC1E51C7A66650020139B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 022CC1D81C7A66650020139B /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 61B5F90209C4CEE200B25A18;
+			remoteInfo = "Sparkle Test App";
+		};
+		022CC1E71C7A66650020139B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 022CC1D81C7A66650020139B /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 612279D90DB5470200AB99EA;
+			remoteInfo = "Sparkle Unit Tests";
+		};
+		022CC1E91C7A66650020139B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 022CC1D81C7A66650020139B /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5D06E8D00FD68C7C005AE3F6;
+			remoteInfo = BinaryDelta;
+		};
+		022CC1EB1C7A66650020139B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 022CC1D81C7A66650020139B /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 55C14BB7136EEF1500649790;
+			remoteInfo = Autoupdate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		022CC1EE1C7A67510020139B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				022CC1EF1C7A67630020139B /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0205F39F1C6A81A000747AEA /* AutoSaveMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoSaveMode.swift; sourceTree = "<group>"; };
 		0206548B1C794E5400805075 /* Packager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packager.swift; sourceTree = "<group>"; };
@@ -70,6 +123,7 @@
 		02240E561C67DAE40089F54B /* DFHackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFHackViewController.swift; sourceTree = "<group>"; };
 		02240E591C67DBC90089F54B /* DFHackConfigEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFHackConfigEntry.swift; sourceTree = "<group>"; };
 		02240E5B1C67DC8C0089F54B /* DFHackTweak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFHackTweak.swift; sourceTree = "<group>"; };
+		022CC1D81C7A66650020139B /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sparkle.xcodeproj; path = ../sparkle/Sparkle.xcodeproj; sourceTree = "<group>"; };
 		0242281A1C6A97C9004D38C2 /* SavingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavingViewController.swift; sourceTree = "<group>"; };
 		02566C7A1C7A24A40023663E /* CLA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLA.swift; sourceTree = "<group>"; };
 		02566C7D1C7A2FBF0023663E /* Afro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Afro.swift; sourceTree = "<group>"; };
@@ -119,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				022CC1ED1C7A66BA0020139B /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +204,18 @@
 			name = DFHack;
 			sourceTree = "<group>";
 		};
+		022CC1D91C7A66650020139B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				022CC1E41C7A66650020139B /* Sparkle.framework */,
+				022CC1E61C7A66650020139B /* Sparkle Test App.app */,
+				022CC1E81C7A66650020139B /* Sparkle Unit Tests.xctest */,
+				022CC1EA1C7A66650020139B /* BinaryDelta */,
+				022CC1EC1C7A66650020139B /* Autoupdate.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		02566C7C1C7A2FA00023663E /* Installers */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +244,7 @@
 				026CB1AA1C64025D001A1B8C /* df */,
 				026CB18D1C63F308001A1B8C /* dfmac */,
 				026CB18C1C63F308001A1B8C /* Products */,
+				022CC1D81C7A66650020139B /* Sparkle.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -273,6 +341,7 @@
 				026CB1871C63F308001A1B8C /* Sources */,
 				026CB1881C63F308001A1B8C /* Frameworks */,
 				026CB1891C63F308001A1B8C /* Resources */,
+				022CC1EE1C7A67510020139B /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -309,12 +378,56 @@
 			mainGroup = 026CB1821C63F308001A1B8C;
 			productRefGroup = 026CB18C1C63F308001A1B8C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 022CC1D91C7A66650020139B /* Products */;
+					ProjectRef = 022CC1D81C7A66650020139B /* Sparkle.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				026CB18A1C63F308001A1B8C /* DF Mac */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		022CC1E41C7A66650020139B /* Sparkle.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Sparkle.framework;
+			remoteRef = 022CC1E31C7A66650020139B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		022CC1E61C7A66650020139B /* Sparkle Test App.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Sparkle Test App.app";
+			remoteRef = 022CC1E51C7A66650020139B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		022CC1E81C7A66650020139B /* Sparkle Unit Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Sparkle Unit Tests.xctest";
+			remoteRef = 022CC1E71C7A66650020139B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		022CC1EA1C7A66650020139B /* BinaryDelta */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = BinaryDelta;
+			remoteRef = 022CC1E91C7A66650020139B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		022CC1EC1C7A66650020139B /* Autoupdate.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Autoupdate.app;
+			remoteRef = 022CC1EB1C7A66650020139B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		026CB1891C63F308001A1B8C /* Resources */ = {

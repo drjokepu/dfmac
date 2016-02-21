@@ -9,3 +9,7 @@
 [submodule "dfgraphics"]
 	path = dfgraphics
 	url = https://github.com/DFgraphics/DFgraphics.git
+[submodule "sparkle"]
+	path = sparkle
+    url = https://github.com/sparkle-project/Sparkle.git
+    ignore = dirty
