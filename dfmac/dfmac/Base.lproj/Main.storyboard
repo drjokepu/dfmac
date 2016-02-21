@@ -1306,7 +1306,7 @@ DQ
                             </textField>
                             <popUpButton verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="zW7-o6-fy6" userLabel="Display Mode Pop Up Button">
                                 <rect key="frame" x="276" y="467" width="312" height="26"/>
-                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="cej-Fd-iN2">
+                                <popUpButtonCell key="cell" type="push" title="Text Will Be Text (TWBT) Legacy" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Htp-4w-0mI" id="cej-Fd-iN2">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="ze2-LD-IfO">
@@ -1318,6 +1318,12 @@ DQ
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                                 <connections>
                                                     <binding destination="5uR-Vk-zwT" name="enabled" keyPath="values.enableDFHack" id="86h-7u-gnd"/>
+                                                </connections>
+                                            </menuItem>
+                                            <menuItem title="Text Will Be Text (TWBT) Legacy" state="on" id="Htp-4w-0mI">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                <connections>
+                                                    <binding destination="5uR-Vk-zwT" name="enabled" keyPath="values.enableDFHack" id="C9H-WH-t1V"/>
                                                 </connections>
                                             </menuItem>
                                             <menuItem title="Vertex Buffer Object (VBO)" id="kMM-fI-5bc">

@@ -45,7 +45,8 @@ final class DisplayModeTransformer: NSValueTransformer {
         case 1: return .text
         case 2: return .frameBuffer
         case 3: return .twbt
-        case 4: return .vbo
+        case 4: return .twbtLegacy
+        case 5: return .vbo
         default: return .standard
         }
     }
@@ -55,7 +56,8 @@ final class DisplayModeTransformer: NSValueTransformer {
         case .text: return 1
         case .frameBuffer: return 2
         case .twbt: return 3
-        case .vbo: return 4
+        case .twbtLegacy: return 4
+        case .vbo: return 5
         default: return 0
         }
     }

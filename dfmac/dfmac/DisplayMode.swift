@@ -13,5 +13,15 @@ enum DisplayMode: String {
     case text = "TEXT"
     case frameBuffer = "FRAME_BUFFER"
     case twbt = "TWBT"
+    case twbtLegacy = "TWBT_LEGACY"
     case vbo = "VBO"
+}
+
+func displayModeRequiresDFHack(mode: DisplayMode) -> Bool {
+    switch mode {
+    case .twbt, .twbtLegacy:
+        return true
+    default:
+        return false
+    }
 }

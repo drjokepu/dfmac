@@ -198,7 +198,13 @@ final class DFHackViewController: NSViewController, NSTableViewDataSource, NSTab
     @IBAction func didClickEnableDFHack(sender: AnyObject) {
         dfhackTable?.reloadData()
         
-        if !Preferences.enableDFHack && Preferences.displayMode == .twbt {
+        if !Preferences.enableDFHack  {
+            disableDFHackDependencies()
+        }
+    }
+    
+    private func disableDFHackDependencies() {
+        if displayModeRequiresDFHack(Preferences.displayMode) {
             Preferences.displayMode = .vbo
         }
     }
