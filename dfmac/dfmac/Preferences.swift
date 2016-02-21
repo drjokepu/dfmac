@@ -16,6 +16,7 @@ private enum PreferencesKey: String {
     case windowedWidth = "windowedWidth"
     case windowedHeight = "windowedHeight"
     case graphicsSet = "graphicsSet"
+    case enableCustomFonts = "enableCustomFonts"
     
     case autoSave = "autoSave"
     case autoBackup = "autoBackup"
@@ -67,6 +68,10 @@ final class Preferences {
         set (value) {
             NSUserDefaults.standardUserDefaults().setObject(value.rawValue, forKey: PreferencesKey.graphicsSet.rawValue)
         }
+    }
+    
+    static var enableCustomFonts: Bool {
+        return boolForKey(.enableCustomFonts)
     }
     
     static var fullScreen: Bool {
@@ -232,6 +237,7 @@ final class Preferences {
             PreferencesKey.windowedWidth.rawValue: 1200,
             PreferencesKey.windowedHeight.rawValue: 675,
             PreferencesKey.graphicsSet.rawValue: GraphicsSet.none.rawValue,
+            PreferencesKey.enableCustomFonts.rawValue: true,
             
             PreferencesKey.autoSave.rawValue: AutoSaveMode.none.rawValue,
             PreferencesKey.autoBackup.rawValue: false,

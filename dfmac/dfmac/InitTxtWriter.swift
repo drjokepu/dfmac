@@ -13,7 +13,7 @@ func writeInitTxt(src: NSURL, dest: NSURL, graphicsSet: GraphicsSetInstaller?) t
     updateDisplaySettings(initTxt)
     
     if let grf = graphicsSet {
-        grf.configureInitTxt(initTxt)
+        grf.configureInitTxt(initTxt, useFont: Preferences.enableCustomFonts)
     }
     
     try emitInitTxt(initTxt as String, dest: dest)

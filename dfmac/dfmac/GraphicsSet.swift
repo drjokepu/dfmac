@@ -10,6 +10,8 @@ import Foundation
 
 enum GraphicsSet: String {
     case none = ""
-    case gemSet = "GemSet"
+    case afro = "Afro"
     case cla = "CLA"
+    case duerer = "Duerer"
+    case gemSet = "GemSet"
 }

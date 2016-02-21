@@ -13,12 +13,16 @@ class GraphicsSetInstaller {
         return "NONE"
     }
     
+    var fontName: String {
+        return ""
+    }
+    
     var graphicsFontName: String {
         return ""
     }
     
     var initTxtSettings: [GraphicsSetTxtSetting] {
-        return GraphicsSetInstaller.makeDefaultInitTxtSettings(graphicsFontName)
+        return GraphicsSetInstaller.makeDefaultInitTxtSettings(font: fontName, graphicsFont: graphicsFontName)
     }
     
     func install(sessionURL: NSURL) throws {
@@ -28,16 +32,24 @@ class GraphicsSetInstaller {
         try hardLinkTree(from: src, to: dest)
     }
     
-    func configureInitTxt(txt: NSMutableString) {
+    func configureInitTxt(txt: NSMutableString, useFont: Bool) {
         for setting in initTxtSettings {
+            if !useFont && setting.isFontSetting() {
+                continue
+            }
+            
             setting.apply(txt)
         }
     }
     
     static func get(graphicsSet: GraphicsSet) -> GraphicsSetInstaller? {
         switch graphicsSet {
+        case .afro:
+            return Afro()
         case .cla:
             return CLA()
+        case .duerer:
+            return Duerer()
         case .gemSet:
             return GemSet()
         default:
@@ -45,8 +57,10 @@ class GraphicsSetInstaller {
         }
     }
     
-    static func makeDefaultInitTxtSettings(graphicsFont: String) -> [GraphicsSetTxtSetting] {
+    static func makeDefaultInitTxtSettings(font font: String, graphicsFont: String) -> [GraphicsSetTxtSetting] {
         return [
+            GraphicsSetTxtSetting(key: "FONT", value: font),
+            GraphicsSetTxtSetting(key: "FULLFONT", value: font),
             GraphicsSetTxtSetting(key: "GRAPHICS", value: "YES"),
             GraphicsSetTxtSetting(key: "GRAPHICS_WINDOWEDX", value: String(Preferences.windowedWidth)),
             GraphicsSetTxtSetting(key: "GRAPHICS_WINDOWEDY", value: String(Preferences.windowedHeight)),

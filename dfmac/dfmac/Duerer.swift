@@ -1,5 +1,5 @@
 //
-//  GemSet.swift
+//  Duerer.swift
 //  DF Mac
 //
 //  Created by Tamas Czinege on 21/02/2016.
@@ -8,16 +8,16 @@
 
 import Foundation
 
-final class GemSet: GraphicsSetInstaller {
+final class Duerer: GraphicsSetInstaller {
     override var name: String {
-        return "GemSet"
+        return "Duerer"
     }
     
     override var fontName: String {
-        return "curses_1280x600.png"
+        return "duerer_sg_15x15.png"
     }
     
     override var graphicsFontName: String {
-        return "gemset_map.png"
+        return "duerer_sg_15x15.png"
     }
 }

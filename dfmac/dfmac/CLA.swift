@@ -13,6 +13,10 @@ final class CLA: GraphicsSetInstaller {
         return "CLA"
     }
     
+    override var fontName: String {
+        return "CLA.png"
+    }
+    
     override var graphicsFontName: String {
         return "CLA.png"
     }

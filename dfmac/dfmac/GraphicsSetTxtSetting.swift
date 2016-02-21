@@ -20,4 +20,8 @@ final class GraphicsSetTxtSetting {
     func apply(txt: NSMutableString) {
         updateInitSetting(txt, key: key, value: value)
     }
+    
+    func isFontSetting() -> Bool {
+        return key == "FONT" || key == "FULLFONT"
+    }
 }

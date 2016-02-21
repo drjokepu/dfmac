@@ -1,5 +1,5 @@
 //
-//  GemSet.swift
+//  Afro.swift
 //  DF Mac
 //
 //  Created by Tamas Czinege on 21/02/2016.
@@ -8,16 +8,16 @@
 
 import Foundation
 
-final class GemSet: GraphicsSetInstaller {
+final class Afro: GraphicsSetInstaller {
     override var name: String {
-        return "GemSet"
+        return "Afro"
     }
     
     override var fontName: String {
-        return "curses_1280x600.png"
+        return "Afro_text_16x16.png"
     }
     
     override var graphicsFontName: String {
-        return "gemset_map.png"
+        return "Afro_16x16.png"
     }
 }
