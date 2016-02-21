@@ -18,6 +18,7 @@ func writeDFHackInit(dest: NSURL) throws {
     writeTweaks(str)
     writePlugins(str)
     writeScripts(str)
+    writeTWBT(str)
     try emitDFHackInit(str as String, dest: dest)
 }
 
@@ -39,6 +40,12 @@ private func writePlugins(str: NSMutableString) {
 
 private func writeScripts(str: NSMutableString) {
     
+}
+
+private func writeTWBT(str: NSMutableString) {
+    if Preferences.displayMode == DisplayMode.twbt {
+        str.appendString("multilevel 3\n")
+    }
 }
 
 private func emitDFHackInit(contents: String, dest: NSURL) throws {
