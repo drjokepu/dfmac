@@ -197,6 +197,10 @@ final class DFHackViewController: NSViewController, NSTableViewDataSource, NSTab
     
     @IBAction func didClickEnableDFHack(sender: AnyObject) {
         dfhackTable?.reloadData()
+        
+        if !Preferences.enableDFHack && Preferences.displayMode == .twbt {
+            Preferences.displayMode = .vbo
+        }
     }
     
     @IBAction func didClickCheckBox(sender: AnyObject?) {

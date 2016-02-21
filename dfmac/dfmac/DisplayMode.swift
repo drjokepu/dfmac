@@ -12,5 +12,6 @@ enum DisplayMode: String {
     case standard = "STANDARD"
     case text = "TEXT"
     case frameBuffer = "FRAME_BUFFER"
+    case twbt = "TWBT"
     case vbo = "VBO"
 }

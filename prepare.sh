@@ -84,6 +84,46 @@ function build_dfhack
     chmod -x "${DF_DIR}/init/dfhack.init"
 }
 
+function build_twbt
+{
+    cd "${BASE_DIR}/dfhack"
+    local DFHACKVER="`git describe --tags`"
+
+    cd "${BASE_DIR}/twbt"
+    local TWBT_VER=`git describe --tags | sed 's/^v//'`
+    local DF="${DF_DIR}/df_osx"
+    local DH="${BASE_DIR}/dfhack"
+    local GCC_TEMP="${BASE_DIR}/gcc_temp"
+    rm -rf "${GCC_TEMP}"
+    mkdir -p "${GCC_TEMP}"
+    ln -s "`which g++`" "${GCC_TEMP}/g++-4.5"
+
+    local DFHACK_LIB_DIR="${BASE_DIR}/dfhack/build/library"
+    
+    ln -s "${BASE_DIR}/dfhack/build-osx/library" "${DFHACK_LIB_DIR}"
+
+    PATH="${PATH}:${GCC_TEMP}" TWBT_VER=${TWBT_VER} DF=${DF} DH=${DH} DFHACKVER=${DFHACKVER} make
+    build_twbt_plugin mousequery
+    build_twbt_plugin resume
+    build_twbt_plugin automaterial
+
+    rm -rf "${GCC_TEMP}" "${DFHACK_LIB_DIR}"
+    cd "${CURRENT_DIR}"
+
+    cp -f "${BASE_DIR}/twbt/dist/${DFHACKVER}/"*.dylib "${DF_DIR}/df_osx/hack/plugins"
+    cp -f "${BASE_DIR}/twbt/dist/overrides.txt" "${DF_DIR}/df_osx/data/init"
+    cp -f "${BASE_DIR}/twbt/dist/"*.png "${DF_DIR}/df_osx/data/art"
+    cp -f "${BASE_DIR}/twbt/dist/"*.lua "${DF_DIR}/df_osx/hack/lua/plugins"
+}
+
+function build_twbt_plugin
+{
+    local PLUGIN="$1"
+    cd plugins
+    PATH="${PATH}:${GCC_TEMP}" TWBT_VER=${TWBT_VER} DF=${DF} DH=${DH} DFHACKVER=${DFHACKVER} PLUGIN=${PLUGIN} make
+    cd ..
+}
+
 function set_mod
 {
 	find "${DF_DIR}/df_osx" -type f -perm +111 | sed 's/.*/"&"/' | xargs chmod -x
@@ -114,11 +154,12 @@ function get_gemset
     cd "${CURRENT_DIR}" 
 }
 
-init_df_dir
-get_df
-prepare_df
-build_dfhack
-set_mod
-install_launch_script
-init_version_files
-get_graphics_sets
+#init_df_dir
+#get_df
+#prepare_df
+#build_dfhack
+build_twbt
+#set_mod
+#install_launch_script
+#init_version_files
+#get_graphics_sets

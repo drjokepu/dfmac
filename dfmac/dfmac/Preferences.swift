@@ -43,10 +43,15 @@ private enum PreferencesKey: String {
 final class Preferences {
     // display
     static var displayMode: DisplayMode {
-        if let mode = DisplayMode(rawValue: stringForKey(.displayMode)) {
-            return mode
-        } else {
-            return .standard
+        get {
+            if let mode = DisplayMode(rawValue: stringForKey(.displayMode)) {
+                return mode
+            } else {
+                return .standard
+            }
+        }
+        set (value) {
+            NSUserDefaults.standardUserDefaults().setObject(value.rawValue, forKey: PreferencesKey.displayMode.rawValue)
         }
     }
     
@@ -206,12 +211,12 @@ final class Preferences {
     static func registerDefaults() {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.registerDefaults([
-            PreferencesKey.displayMode.rawValue: DisplayMode.vbo.rawValue,
+            PreferencesKey.displayMode.rawValue: DisplayMode.twbt.rawValue,
             PreferencesKey.fullScreen.rawValue: false,
             PreferencesKey.showFPS.rawValue: false,
-            PreferencesKey.playIntro.rawValue: true,
-            PreferencesKey.windowedWidth.rawValue: 80,
-            PreferencesKey.windowedHeight.rawValue: 25,
+            PreferencesKey.playIntro.rawValue: false,
+            PreferencesKey.windowedWidth.rawValue: 1200,
+            PreferencesKey.windowedHeight.rawValue: 675,
             
             PreferencesKey.autoSave.rawValue: AutoSaveMode.none.rawValue,
             PreferencesKey.autoBackup.rawValue: false,
@@ -232,7 +237,7 @@ final class Preferences {
             PreferencesKey.artifacts.rawValue: true,
             PreferencesKey.grazeCoefficient.rawValue: 100,
             
-            PreferencesKey.enableDFHack.rawValue: false,
+            PreferencesKey.enableDFHack.rawValue: true,
             PreferencesKey.plugins.rawValue: [
                 "title-version",
                 "manipulator",

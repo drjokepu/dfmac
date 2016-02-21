@@ -2,3 +2,7 @@
 	path = dfhack
     url = https://github.com/DFHack/dfhack.git
     ignore = dirty
+[submodule "twbt"]
+	path = twbt
+    url = https://github.com/mifki/df-twbt.git
+    ignore = dirty
