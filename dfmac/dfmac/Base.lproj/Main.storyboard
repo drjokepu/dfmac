@@ -625,23 +625,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="670" height="374"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nii-l7-F6S" userLabel="Background Image View">
+                            <imageView translatesAutoresizingMaskIntoConstraints="NO" id="nii-l7-F6S" userLabel="Background Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="670" height="374"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="launcher_background" id="dTs-5d-Ibr"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="670" id="ilh-Ww-cDk"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="374" id="kDx-mZ-67E"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyUpOrDown" image="launcher_background" id="dTs-5d-Ibr"/>
                             </imageView>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="obv-ba-xpa" userLabel="Quit Button">
-                                <rect key="frame" x="512" y="20" width="91" height="32"/>
-                                <buttonCell key="cell" type="push" title="Quit" bezelStyle="rounded" alignment="center" borderStyle="border" transparent="YES" imageScaling="proportionallyDown" inset="2" id="zYq-tt-Tfg">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="obv-ba-xpa" userLabel="Quit Button">
+                                <rect key="frame" x="524" y="13" width="132" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="jSa-bU-MdF"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Quit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zYq-tt-Tfg">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
                                 </buttonCell>
                                 <connections>
                                     <action selector="didClickQuit:" target="XfG-lQ-9wD" id="Oay-gY-Ze4"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wcd-Om-eFz" userLabel="Launch Button">
-                                <rect key="frame" x="284" y="25" width="104" height="24"/>
-                                <buttonCell key="cell" type="squareTextured" title="Launch" bezelStyle="texturedSquare" alignment="center" borderStyle="border" transparent="YES" imageScaling="proportionallyDown" inset="2" id="wZS-v6-NKl">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wcd-Om-eFz" userLabel="Launch Button">
+                                <rect key="frame" x="269" y="13" width="132" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="tTV-Ag-xuP"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Launch" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wZS-v6-NKl">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -649,9 +662,12 @@
                                     <action selector="didClickLaunch:" target="XfG-lQ-9wD" id="j1h-7K-bWY"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8oW-UV-7qI" userLabel="Preferences Button">
-                                <rect key="frame" x="63" y="25" width="120" height="24"/>
-                                <buttonCell key="cell" type="squareTextured" title="Preferences" bezelStyle="texturedSquare" alignment="center" borderStyle="border" transparent="YES" imageScaling="proportionallyDown" inset="2" id="dO4-Mo-gvu">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8oW-UV-7qI" userLabel="Preferences Button">
+                                <rect key="frame" x="14" y="13" width="132" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="iQY-Ak-Uoa"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Preferences" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dO4-Mo-gvu">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -659,15 +675,41 @@
                                     <segue destination="ULG-mW-PVX" kind="show" id="w7R-IM-pHr"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="URf-k8-1Ve">
-                                <rect key="frame" x="18" y="156" width="634" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="URf-k8-1Ve">
+                                <rect key="frame" x="-2" y="255" width="654" height="14"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Dwaft Fortress: 0.00.0 DFHack: 0.00.0" id="dtL-Eg-tlM">
-                                    <font key="font" size="13" name="HelveticaNeue-UltraLight"/>
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="qnW-w7-hKJ" userLabel="DFMac Label">
+                                <rect key="frame" x="18" y="277" width="634" height="77"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Dwarf Fortress for Mac" id="8n0-G4-50m">
+                                    <font key="font" metaFont="systemThin" size="64"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="URf-k8-1Ve" secondAttribute="trailing" constant="20" symbolic="YES" id="3na-5T-snw"/>
+                            <constraint firstItem="qnW-w7-hKJ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="44D-TP-YIm"/>
+                            <constraint firstAttribute="bottom" secondItem="Wcd-Om-eFz" secondAttribute="bottom" constant="20" symbolic="YES" id="6oR-Tr-gA6"/>
+                            <constraint firstAttribute="trailing" secondItem="nii-l7-F6S" secondAttribute="trailing" id="8D6-ia-le5"/>
+                            <constraint firstItem="URf-k8-1Ve" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="8Hl-Od-mSJ"/>
+                            <constraint firstAttribute="trailing" secondItem="obv-ba-xpa" secondAttribute="trailing" constant="20" symbolic="YES" id="HG3-Zv-6Di"/>
+                            <constraint firstAttribute="bottom" secondItem="nii-l7-F6S" secondAttribute="bottom" id="LsK-JF-YPP"/>
+                            <constraint firstItem="8oW-UV-7qI" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="OMC-Hq-1ua"/>
+                            <constraint firstItem="nii-l7-F6S" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="OwN-Da-BC9"/>
+                            <constraint firstAttribute="trailing" secondItem="qnW-w7-hKJ" secondAttribute="trailing" constant="20" symbolic="YES" id="g3H-nG-ahz"/>
+                            <constraint firstItem="Wcd-Om-eFz" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="lgr-cZ-SjX"/>
+                            <constraint firstAttribute="bottom" secondItem="8oW-UV-7qI" secondAttribute="bottom" constant="20" symbolic="YES" id="r9X-dv-Nrs"/>
+                            <constraint firstItem="qnW-w7-hKJ" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="rGy-6S-I37"/>
+                            <constraint firstItem="nii-l7-F6S" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="rHX-ds-P6i"/>
+                            <constraint firstAttribute="bottom" secondItem="obv-ba-xpa" secondAttribute="bottom" constant="20" symbolic="YES" id="vTr-Kj-HL9"/>
+                            <constraint firstItem="URf-k8-1Ve" firstAttribute="top" secondItem="qnW-w7-hKJ" secondAttribute="bottom" constant="8" symbolic="YES" id="zNe-Z6-lJy"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="versionLabel" destination="URf-k8-1Ve" id="yr0-WM-R8R"/>
