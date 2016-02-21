@@ -15,6 +15,7 @@ private enum PreferencesKey: String {
     case playIntro = "playIntro"
     case windowedWidth = "windowedWidth"
     case windowedHeight = "windowedHeight"
+    case graphicsSet = "graphicsSet"
     
     case autoSave = "autoSave"
     case autoBackup = "autoBackup"
@@ -52,6 +53,19 @@ final class Preferences {
         }
         set (value) {
             NSUserDefaults.standardUserDefaults().setObject(value.rawValue, forKey: PreferencesKey.displayMode.rawValue)
+        }
+    }
+    
+    static var graphicsSet: GraphicsSet {
+        get {
+            if let mode = GraphicsSet(rawValue: stringForKey(.graphicsSet)) {
+                return mode
+            } else {
+                return .none
+            }
+        }
+        set (value) {
+            NSUserDefaults.standardUserDefaults().setObject(value.rawValue, forKey: PreferencesKey.graphicsSet.rawValue)
         }
     }
     
@@ -217,6 +231,7 @@ final class Preferences {
             PreferencesKey.playIntro.rawValue: false,
             PreferencesKey.windowedWidth.rawValue: 1200,
             PreferencesKey.windowedHeight.rawValue: 675,
+            PreferencesKey.graphicsSet.rawValue: GraphicsSet.none.rawValue,
             
             PreferencesKey.autoSave.rawValue: AutoSaveMode.none.rawValue,
             PreferencesKey.autoBackup.rawValue: false,

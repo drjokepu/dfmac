@@ -43,14 +43,14 @@ final class Launcher {
         let df1 = Paths.dfURL(forSession: sessionURL)
         try hardLinkTree(from: df0, to: df1)
         
-        let graphicsSet = GemSet()
+        let graphicsSet = GraphicsSetInstaller.get(Preferences.graphicsSet)
         try installGraphicsSet(sessionURL, graphicsSet: graphicsSet)
         try applyPreferences(sessionURL, graphicsSet: graphicsSet)
         try ensureSaveFolderIsLinked(sessionURL)
     }
     
-    private static func installGraphicsSet(sessionURL: NSURL, graphicsSet: GraphicsSetInstaller) throws {
-        try graphicsSet.install(sessionURL)
+    private static func installGraphicsSet(sessionURL: NSURL, graphicsSet: GraphicsSetInstaller?) throws {
+        try graphicsSet?.install(sessionURL)
     }
     
     private static func applyPreferences(sessionURL: NSURL, graphicsSet: GraphicsSetInstaller?) throws {

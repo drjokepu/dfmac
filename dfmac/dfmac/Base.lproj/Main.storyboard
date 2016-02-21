@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -1282,18 +1283,18 @@ DQ
                 <customObject id="ATy-4B-kvo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController representsSharedInstance="YES" id="wnI-Of-Th5"/>
             </objects>
-            <point key="canvasLocation" x="2236" y="1483.5"/>
+            <point key="canvasLocation" x="2235" y="1542.5"/>
         </scene>
         <!--Display View Controller-->
         <scene sceneID="vAg-QI-rbi">
             <objects>
                 <viewController id="hMe-gF-Zcj" userLabel="Display View Controller" sceneMemberID="viewController">
                     <view key="view" verticalCompressionResistancePriority="250" id="CjN-x6-tfd">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="155"/>
+                        <rect key="frame" x="0.0" y="0.0" width="605" height="511"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Uup-ZL-EZL">
-                                <rect key="frame" x="18" y="117" width="254" height="17"/>
+                                <rect key="frame" x="18" y="473" width="254" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="2em-wC-8Fw"/>
                                 </constraints>
@@ -1304,8 +1305,8 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <popUpButton verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="zW7-o6-fy6" userLabel="Display Mode Pop Up Button">
-                                <rect key="frame" x="276" y="111" width="307" height="26"/>
-                                <popUpButtonCell key="cell" type="push" title="Text Will Be Text (TWBT)" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="r0g-Ol-2Ta" id="cej-Fd-iN2">
+                                <rect key="frame" x="276" y="467" width="312" height="26"/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="cej-Fd-iN2">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="ze2-LD-IfO">
@@ -1313,7 +1314,7 @@ DQ
                                             <menuItem title="Standard" id="g35-Us-3CY"/>
                                             <menuItem title="Text" id="bg0-h6-HgA"/>
                                             <menuItem title="Frame Buffer" id="Iun-U1-N5Y"/>
-                                            <menuItem title="Text Will Be Text (TWBT)" state="on" id="r0g-Ol-2Ta">
+                                            <menuItem title="Text Will Be Text (TWBT)" id="r0g-Ol-2Ta">
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                                 <connections>
                                                     <binding destination="5uR-Vk-zwT" name="enabled" keyPath="values.enableDFHack" id="86h-7u-gnd"/>
@@ -1334,7 +1335,7 @@ DQ
                                 </connections>
                             </popUpButton>
                             <button verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="OxE-jR-83G">
-                                <rect key="frame" x="276" y="90" width="306" height="18"/>
+                                <rect key="frame" x="276" y="446" width="311" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="57" id="u7D-Rb-ys8"/>
                                 </constraints>
@@ -1347,7 +1348,7 @@ DQ
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="nS8-fk-vQS">
-                                <rect key="frame" x="276" y="38" width="306" height="18"/>
+                                <rect key="frame" x="276" y="394" width="311" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="57" id="rd2-pG-Xur"/>
                                 </constraints>
@@ -1360,7 +1361,7 @@ DQ
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="r7O-4e-hB7">
-                                <rect key="frame" x="276" y="18" width="306" height="18"/>
+                                <rect key="frame" x="276" y="374" width="311" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="57" id="KlR-Ad-1R0"/>
                                 </constraints>
@@ -1373,7 +1374,7 @@ DQ
                                 </connections>
                             </button>
                             <textField verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="1sP-kA-bam" userLabel="Width Text Field">
-                                <rect key="frame" x="278" y="62" width="50" height="22"/>
+                                <rect key="frame" x="278" y="418" width="50" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="QhJ-X3-Of8"/>
                                 </constraints>
@@ -1399,7 +1400,7 @@ DQ
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SCQ-B9-2iq">
-                                <rect key="frame" x="18" y="65" width="254" height="17"/>
+                                <rect key="frame" x="18" y="421" width="254" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="F8x-Vj-Vfl"/>
                                 </constraints>
@@ -1410,7 +1411,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4nb-4U-87h">
-                                <rect key="frame" x="334" y="65" width="48" height="17"/>
+                                <rect key="frame" x="334" y="421" width="48" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Height:" id="VWO-6K-Sob">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1418,7 +1419,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="j5o-bp-QUU" userLabel="Height Text Field">
-                                <rect key="frame" x="388" y="62" width="50" height="22"/>
+                                <rect key="frame" x="388" y="418" width="50" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="2GU-Zn-BJs"/>
                                 </constraints>
@@ -1443,31 +1444,96 @@ DQ
                                     </binding>
                                 </connections>
                             </textField>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xtc-vQ-WED" userLabel="Graphics Set Pop Up Button">
+                                <rect key="frame" x="276" y="332" width="312" height="26"/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="BNH-HO-phU">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="NmH-gb-2bO">
+                                        <items>
+                                            <menuItem title="None" id="glZ-LK-Ais">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="GemSet" id="E20-eR-fag">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <binding destination="5uR-Vk-zwT" name="selectedIndex" keyPath="values.graphicsSet" id="idR-2W-Thh">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">GraphicsSetTransformer</string>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </popUpButton>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qLR-Nj-z9u" userLabel="Graphics Set Preview" customClass="CollapsedPreviewImageView" customModule="DF_Mac" customModuleProvider="target">
+                                <rect key="frame" x="278" y="20" width="307" height="307"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="307" identifier="previewWidth" id="DIq-8z-atK"/>
+                                    <constraint firstAttribute="width" secondItem="qLR-Nj-z9u" secondAttribute="height" multiplier="1:1" identifier="previewRatio" id="Y8S-W2-tfA"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="OAg-IW-ItU"/>
+                                <connections>
+                                    <binding destination="5uR-Vk-zwT" name="hidden" keyPath="values.graphicsSet" id="Usb-95-Uzj">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NoGraphicsSetSelectedTransformer</string>
+                                        </dictionary>
+                                    </binding>
+                                    <binding destination="5uR-Vk-zwT" name="value" keyPath="values.graphicsSet" id="yoh-ar-vT5">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">GraphicsSetPreviewImageTransformer</string>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZOs-OJ-HQg">
+                                <rect key="frame" x="18" y="338" width="254" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="MuC-hN-rs0"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Graphics Set:" id="i4g-3C-8U7">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="qLR-Nj-z9u" firstAttribute="leading" secondItem="xtc-vQ-WED" secondAttribute="leading" id="02K-0n-Nw4"/>
                             <constraint firstItem="OxE-jR-83G" firstAttribute="top" secondItem="zW7-o6-fy6" secondAttribute="bottom" constant="8" symbolic="YES" id="1uk-IL-nPs"/>
                             <constraint firstItem="r7O-4e-hB7" firstAttribute="leading" secondItem="nS8-fk-vQS" secondAttribute="leading" id="2EK-at-uxb"/>
                             <constraint firstItem="Uup-ZL-EZL" firstAttribute="baseline" secondItem="zW7-o6-fy6" secondAttribute="baseline" id="2rR-YH-MkS"/>
+                            <constraint firstAttribute="bottom" secondItem="qLR-Nj-z9u" secondAttribute="bottom" constant="20" symbolic="YES" identifier="previewBottomSpace" id="3kN-06-ODQ"/>
                             <constraint firstItem="SCQ-B9-2iq" firstAttribute="leading" secondItem="Uup-ZL-EZL" secondAttribute="leading" id="9KL-nX-x6h"/>
                             <constraint firstItem="4nb-4U-87h" firstAttribute="leading" secondItem="1sP-kA-bam" secondAttribute="trailing" constant="8" symbolic="YES" id="AwM-oh-JOh"/>
+                            <constraint firstItem="xtc-vQ-WED" firstAttribute="leading" secondItem="ZOs-OJ-HQg" secondAttribute="trailing" constant="8" symbolic="YES" id="FYt-Nv-Vxj"/>
                             <constraint firstItem="1sP-kA-bam" firstAttribute="leading" secondItem="OxE-jR-83G" secondAttribute="leading" id="Fba-SU-9v8"/>
                             <constraint firstItem="OxE-jR-83G" firstAttribute="trailing" secondItem="zW7-o6-fy6" secondAttribute="trailing" id="JyS-vr-IvE"/>
+                            <constraint firstItem="xtc-vQ-WED" firstAttribute="leading" secondItem="zW7-o6-fy6" secondAttribute="leading" id="L8x-xO-mCU"/>
                             <constraint firstItem="zW7-o6-fy6" firstAttribute="top" secondItem="CjN-x6-tfd" secondAttribute="top" constant="20" symbolic="YES" id="Lhi-pW-4X2"/>
                             <constraint firstItem="j5o-bp-QUU" firstAttribute="leading" secondItem="4nb-4U-87h" secondAttribute="trailing" constant="8" symbolic="YES" id="NyW-e9-eJB"/>
-                            <constraint firstAttribute="bottom" secondItem="r7O-4e-hB7" secondAttribute="bottom" constant="20" symbolic="YES" id="PY5-gv-1B4"/>
+                            <constraint firstItem="ZOs-OJ-HQg" firstAttribute="leading" secondItem="Uup-ZL-EZL" secondAttribute="leading" id="Szb-NA-2wT"/>
                             <constraint firstItem="r7O-4e-hB7" firstAttribute="trailing" secondItem="nS8-fk-vQS" secondAttribute="trailing" id="T51-Vn-s2O"/>
                             <constraint firstItem="Uup-ZL-EZL" firstAttribute="leading" secondItem="CjN-x6-tfd" secondAttribute="leading" constant="20" symbolic="YES" id="UCm-rf-OiZ"/>
                             <constraint firstItem="zW7-o6-fy6" firstAttribute="leading" secondItem="Uup-ZL-EZL" secondAttribute="trailing" constant="8" symbolic="YES" id="YrQ-yb-Srz"/>
                             <constraint firstItem="1sP-kA-bam" firstAttribute="baseline" secondItem="4nb-4U-87h" secondAttribute="baseline" id="ZFD-xx-atO"/>
+                            <constraint firstItem="xtc-vQ-WED" firstAttribute="top" secondItem="r7O-4e-hB7" secondAttribute="bottom" constant="20" symbolic="YES" id="ZPg-4w-zuy"/>
                             <constraint firstItem="nS8-fk-vQS" firstAttribute="trailing" secondItem="OxE-jR-83G" secondAttribute="trailing" id="Zdn-HF-t45"/>
                             <constraint firstItem="nS8-fk-vQS" firstAttribute="leading" secondItem="OxE-jR-83G" secondAttribute="leading" id="a7t-gh-nnR"/>
+                            <constraint firstItem="xtc-vQ-WED" firstAttribute="trailing" secondItem="zW7-o6-fy6" secondAttribute="trailing" id="bis-Vq-EKr"/>
+                            <constraint firstAttribute="bottom" secondItem="xtc-vQ-WED" secondAttribute="bottom" priority="750" constant="20" symbolic="YES" id="cuF-zS-D9r"/>
                             <constraint firstItem="4nb-4U-87h" firstAttribute="baseline" secondItem="j5o-bp-QUU" secondAttribute="baseline" id="dqX-eu-OZD"/>
+                            <constraint firstItem="qLR-Nj-z9u" firstAttribute="trailing" secondItem="xtc-vQ-WED" secondAttribute="trailing" id="gfU-yJ-tax"/>
+                            <constraint firstItem="qLR-Nj-z9u" firstAttribute="top" secondItem="xtc-vQ-WED" secondAttribute="bottom" constant="8" symbolic="YES" id="i58-x9-V9E"/>
                             <constraint firstItem="1sP-kA-bam" firstAttribute="baseline" secondItem="SCQ-B9-2iq" secondAttribute="baseline" id="ila-31-4xf"/>
                             <constraint firstAttribute="trailing" secondItem="zW7-o6-fy6" secondAttribute="trailing" constant="20" symbolic="YES" id="itk-XR-Lch"/>
                             <constraint firstItem="r7O-4e-hB7" firstAttribute="top" secondItem="nS8-fk-vQS" secondAttribute="bottom" constant="6" symbolic="YES" id="jdZ-si-V6j"/>
                             <constraint firstItem="1sP-kA-bam" firstAttribute="leading" secondItem="SCQ-B9-2iq" secondAttribute="trailing" constant="8" symbolic="YES" id="luJ-wU-tcf"/>
                             <constraint firstItem="nS8-fk-vQS" firstAttribute="top" secondItem="1sP-kA-bam" secondAttribute="bottom" constant="8" symbolic="YES" id="lv7-Tf-K5V"/>
                             <constraint firstItem="OxE-jR-83G" firstAttribute="leading" secondItem="zW7-o6-fy6" secondAttribute="leading" id="uJ9-SU-tDv"/>
+                            <constraint firstItem="ZOs-OJ-HQg" firstAttribute="baseline" secondItem="xtc-vQ-WED" secondAttribute="baseline" id="uXL-c5-wcz"/>
                             <constraint firstItem="1sP-kA-bam" firstAttribute="top" secondItem="OxE-jR-83G" secondAttribute="bottom" constant="8" symbolic="YES" id="ydd-5B-xqp"/>
                         </constraints>
                     </view>
@@ -1666,7 +1732,7 @@ DQ
                 <customObject id="MCb-M9-8JD" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController representsSharedInstance="YES" id="vgU-3E-jV3"/>
             </objects>
-            <point key="canvasLocation" x="2236" y="1067"/>
+            <point key="canvasLocation" x="2233" y="1144"/>
         </scene>
     </scenes>
     <resources>

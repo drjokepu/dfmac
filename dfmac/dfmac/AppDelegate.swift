@@ -23,6 +23,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private static func registerTransformers() {
         IntegerTransformer.register()
         DisplayModeTransformer.register()
+        GraphicsSetTransformer.register()
+        GraphicsSetPreviewImageTransformer.register()
+        NoGraphicsSetSelectedTransformer.register()
     }
     
     private static func registerCleanup() {

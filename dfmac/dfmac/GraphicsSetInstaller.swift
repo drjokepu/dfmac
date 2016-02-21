@@ -29,4 +29,13 @@ class GraphicsSetInstaller {
             setting.apply(txt)
         }
     }
+    
+    static func get(graphicsSet: GraphicsSet) -> GraphicsSetInstaller? {
+        switch graphicsSet {
+        case .gemSet:
+            return GemSet()
+        default:
+            return nil
+        }
+    }
 }
