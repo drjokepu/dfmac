@@ -53,6 +53,7 @@
 		02962F251C7926910019BAF2 /* LaunchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02962F241C7926910019BAF2 /* LaunchingViewController.swift */; };
 		02962F281C7941850019BAF2 /* GraphicsSetInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02962F271C7941850019BAF2 /* GraphicsSetInstaller.swift */; };
 		02962F2A1C79422D0019BAF2 /* GemSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02962F291C79422D0019BAF2 /* GemSet.swift */; };
+		02D3A80D1C7A5FB400F9AC06 /* DFHackJobPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D3A80C1C7A5FB400F9AC06 /* DFHackJobPlugin.swift */; };
 		02D5F1221C7A005E00A49E58 /* NoGraphicsSetSelectedTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D5F1211C7A005E00A49E58 /* NoGraphicsSetSelectedTransformer.swift */; };
 		02D5F1261C7A05AC00A49E58 /* CollapsedPreviewImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D5F1251C7A05AC00A49E58 /* CollapsedPreviewImageView.swift */; };
 		02D5F1281C7A1DAD00A49E58 /* GraphicsSetPreviewImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D5F1271C7A1DAD00A49E58 /* GraphicsSetPreviewImageTransformer.swift */; };
@@ -107,6 +108,7 @@
 		02962F241C7926910019BAF2 /* LaunchingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchingViewController.swift; sourceTree = "<group>"; };
 		02962F271C7941850019BAF2 /* GraphicsSetInstaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicsSetInstaller.swift; sourceTree = "<group>"; };
 		02962F291C79422D0019BAF2 /* GemSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GemSet.swift; sourceTree = "<group>"; };
+		02D3A80C1C7A5FB400F9AC06 /* DFHackJobPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFHackJobPlugin.swift; sourceTree = "<group>"; };
 		02D5F1211C7A005E00A49E58 /* NoGraphicsSetSelectedTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoGraphicsSetSelectedTransformer.swift; sourceTree = "<group>"; };
 		02D5F1251C7A05AC00A49E58 /* CollapsedPreviewImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsedPreviewImageView.swift; sourceTree = "<group>"; };
 		02D5F1271C7A1DAD00A49E58 /* GraphicsSetPreviewImageTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicsSetPreviewImageTransformer.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				02240E591C67DBC90089F54B /* DFHackConfigEntry.swift */,
 				02962F1C1C78C3020019BAF2 /* DFHackBugfixPlugin.swift */,
+				02D3A80C1C7A5FB400F9AC06 /* DFHackJobPlugin.swift */,
 				02962F1A1C78C2200019BAF2 /* DFHackPlugin.swift */,
 				02962F1E1C78CA210019BAF2 /* DFHackUIUpgradePlugin.swift */,
 				02240E5B1C67DC8C0089F54B /* DFHackTweak.swift */,
@@ -356,6 +359,7 @@
 				02D5F1221C7A005E00A49E58 /* NoGraphicsSetSelectedTransformer.swift in Sources */,
 				026CB18F1C63F308001A1B8C /* AppDelegate.swift in Sources */,
 				026CB1AD1C6542A4001A1B8C /* IntegerTransformer.swift in Sources */,
+				02D3A80D1C7A5FB400F9AC06 /* DFHackJobPlugin.swift in Sources */,
 				02240E571C67DAE40089F54B /* DFHackViewController.swift in Sources */,
 				02962F1B1C78C2200019BAF2 /* DFHackPlugin.swift in Sources */,
 				026CB1AF1C654A51001A1B8C /* DisplayMode.swift in Sources */,

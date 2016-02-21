@@ -11,6 +11,7 @@ import Cocoa
 final class DFHackViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
     private enum ConfigSection {
         case Bugfixes([DFHackBugfixPlugin])
+        case Jobs([DFHackJobPlugin])
         case Tweaks([DFHackTweak])
         case UIUpgrades([DFHackUIUpgradePlugin])
     }
@@ -33,6 +34,7 @@ final class DFHackViewController: NSViewController, NSTableViewDataSource, NSTab
     required init?(coder: NSCoder) {
         self.sections = [
             .Bugfixes(DFHackBugfixPlugin.getAll()),
+            .Jobs(DFHackJobPlugin.getAll()),
             .Tweaks(DFHackTweak.getAll()),
             .UIUpgrades(DFHackUIUpgradePlugin.getAll())
         ]
@@ -52,6 +54,8 @@ final class DFHackViewController: NSViewController, NSTableViewDataSource, NSTab
         switch section {
         case .Bugfixes(let bugfixes):
             return bugfixes.count
+        case .Jobs(let jobs):
+            return jobs.count
         case .Tweaks(let tweaks):
             return tweaks.count
         case .UIUpgrades(let upgrades):
@@ -99,6 +103,8 @@ final class DFHackViewController: NSViewController, NSTableViewDataSource, NSTab
         switch section {
         case .Bugfixes:
             return .GroupHeader("Bug Fixes")
+        case .Jobs:
+            return .GroupHeader("Job and Fortress Management")
         case .Tweaks:
             return .GroupHeader("Tweaks")
         case .UIUpgrades:
@@ -110,6 +116,8 @@ final class DFHackViewController: NSViewController, NSTableViewDataSource, NSTab
         switch section {
         case .Bugfixes(let bugfixes):
             return .PluginRow(bugfixes[index])
+        case .Jobs(let jobs):
+            return .PluginRow(jobs[index])
         case .Tweaks(let tweaks):
             return .TweakRow(tweaks[index])
         case .UIUpgrades(let upgrades):
