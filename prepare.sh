@@ -53,15 +53,18 @@ function prepare_df
 {
 	rm -rf "${DF_DIR}/libs"
 	mkdir -p "${DF_DIR}/libs"
-	ln "${DF_DIR}/df_osx/libs/libstdc++.6.dylib" "${DF_DIR}/libs/"
-	ln "${DF_DIR}/df_osx/libs/libgcc_s.1.dylib" "${DF_DIR}/libs/"
-	ln "${DF_DIR}/df_osx/libs/libfmodex.dylib" "${DF_DIR}/libs/"
+    cd "${DF_DIR}/libs"
+	ln -s "../df_osx/libs/libstdc++.6.dylib" .
+	ln -s "../df_osx/libs/libgcc_s.1.dylib" .
+	ln -s "../df_osx/libs/libfmodex.dylib" .
 	
 	rm -rf "${DF_DIR}/Frameworks"
 	mkdir -p "${DF_DIR}/Frameworks"
-	cp -r "${DF_DIR}/df_osx/libs/SDL.Framework" "${DF_DIR}/Frameworks/"
-	cp -r "${DF_DIR}/df_osx/libs/SDL_image.framework" "${DF_DIR}/Frameworks/"
-	cp -r "${DF_DIR}/df_osx/libs/SDL_ttf.framework" "${DF_DIR}/Frameworks/"
+    cd "${DF_DIR}/Frameworks"
+	ln -s "../df_osx/libs/SDL.Framework" .
+	ln -s "../df_osx/libs/SDL_image.framework" .
+	ln -s "../df_osx/libs/SDL_ttf.framework" .
+    cd "$BASE_DIR"
 	
 	rm -rf "${DF_DIR}/init"
 	mkdir -p "${DF_DIR}/init"

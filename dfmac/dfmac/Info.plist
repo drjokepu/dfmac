@@ -34,5 +34,9 @@
 	<string>NSApplication</string>
 	<key>SUFeedURL</key>
 	<string>https://drjokepu.github.io/dfmac/sparkle-feed.xml</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>MacOSX</string>
+	</array>
 </dict>
 </plist>
