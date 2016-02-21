@@ -21,6 +21,17 @@
 		02566C7B1C7A24A40023663E /* CLA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02566C7A1C7A24A40023663E /* CLA.swift */; };
 		02566C7E1C7A2FBF0023663E /* Afro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02566C7D1C7A2FBF0023663E /* Afro.swift */; };
 		02566C801C7A3C4C0023663E /* Duerer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02566C7F1C7A3C4C0023663E /* Duerer.swift */; };
+		02566C821C7A46E30023663E /* GrimFortress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02566C811C7A46E30023663E /* GrimFortress.swift */; };
+		02566C841C7A46EC0023663E /* Ironhand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02566C831C7A46EC0023663E /* Ironhand.swift */; };
+		02566C861C7A4E070023663E /* JollyBastion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02566C851C7A4E070023663E /* JollyBastion.swift */; };
+		02566C881C7A4E0F0023663E /* Mayday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02566C871C7A4E0F0023663E /* Mayday.swift */; };
+		02566C8A1C7A4E180023663E /* Obsidian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02566C891C7A4E180023663E /* Obsidian.swift */; };
+		02566C8C1C7A52D90023663E /* Phoebus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02566C8B1C7A52D90023663E /* Phoebus.swift */; };
+		02566C8E1C7A52E10023663E /* Shizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02566C8D1C7A52E10023663E /* Shizzle.swift */; };
+		02566C901C7A52EF0023663E /* Spacefox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02566C8F1C7A52EF0023663E /* Spacefox.swift */; };
+		02566C921C7A57890023663E /* Taffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02566C911C7A57890023663E /* Taffer.swift */; };
+		02566C941C7A578F0023663E /* Tergel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02566C931C7A578F0023663E /* Tergel.swift */; };
+		02566C961C7A579C0023663E /* Wanderlust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02566C951C7A579C0023663E /* Wanderlust.swift */; };
 		0264CDEC1C6BAACA0074D5B0 /* DFInitWriterTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0264CDEB1C6BAACA0074D5B0 /* DFInitWriterTools.swift */; };
 		0264CDEE1C6BAB460074D5B0 /* DInitTxtWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0264CDED1C6BAB460074D5B0 /* DInitTxtWriter.swift */; };
 		026CB18F1C63F308001A1B8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026CB18E1C63F308001A1B8C /* AppDelegate.swift */; };
@@ -62,6 +73,17 @@
 		02566C7A1C7A24A40023663E /* CLA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLA.swift; sourceTree = "<group>"; };
 		02566C7D1C7A2FBF0023663E /* Afro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Afro.swift; sourceTree = "<group>"; };
 		02566C7F1C7A3C4C0023663E /* Duerer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duerer.swift; sourceTree = "<group>"; };
+		02566C811C7A46E30023663E /* GrimFortress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrimFortress.swift; sourceTree = "<group>"; };
+		02566C831C7A46EC0023663E /* Ironhand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ironhand.swift; sourceTree = "<group>"; };
+		02566C851C7A4E070023663E /* JollyBastion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JollyBastion.swift; sourceTree = "<group>"; };
+		02566C871C7A4E0F0023663E /* Mayday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mayday.swift; sourceTree = "<group>"; };
+		02566C891C7A4E180023663E /* Obsidian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Obsidian.swift; sourceTree = "<group>"; };
+		02566C8B1C7A52D90023663E /* Phoebus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Phoebus.swift; sourceTree = "<group>"; };
+		02566C8D1C7A52E10023663E /* Shizzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shizzle.swift; sourceTree = "<group>"; };
+		02566C8F1C7A52EF0023663E /* Spacefox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spacefox.swift; sourceTree = "<group>"; };
+		02566C911C7A57890023663E /* Taffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Taffer.swift; sourceTree = "<group>"; };
+		02566C931C7A578F0023663E /* Tergel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tergel.swift; sourceTree = "<group>"; };
+		02566C951C7A579C0023663E /* Wanderlust.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wanderlust.swift; sourceTree = "<group>"; };
 		0264CDEB1C6BAACA0074D5B0 /* DFInitWriterTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFInitWriterTools.swift; sourceTree = "<group>"; };
 		0264CDED1C6BAB460074D5B0 /* DInitTxtWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DInitTxtWriter.swift; sourceTree = "<group>"; };
 		026CB18B1C63F308001A1B8C /* DF Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DF Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +153,17 @@
 				02566C7A1C7A24A40023663E /* CLA.swift */,
 				02566C7F1C7A3C4C0023663E /* Duerer.swift */,
 				02962F291C79422D0019BAF2 /* GemSet.swift */,
+				02566C811C7A46E30023663E /* GrimFortress.swift */,
+				02566C831C7A46EC0023663E /* Ironhand.swift */,
+				02566C851C7A4E070023663E /* JollyBastion.swift */,
+				02566C871C7A4E0F0023663E /* Mayday.swift */,
+				02566C891C7A4E180023663E /* Obsidian.swift */,
+				02566C8B1C7A52D90023663E /* Phoebus.swift */,
+				02566C8D1C7A52E10023663E /* Shizzle.swift */,
+				02566C8F1C7A52EF0023663E /* Spacefox.swift */,
+				02566C911C7A57890023663E /* Taffer.swift */,
+				02566C931C7A578F0023663E /* Tergel.swift */,
+				02566C951C7A579C0023663E /* Wanderlust.swift */,
 			);
 			name = Installers;
 			sourceTree = "<group>";
@@ -305,9 +338,16 @@
 				0206548E1C7954B800805075 /* GraphicsSetTxtSetting.swift in Sources */,
 				02240E541C679BF60089F54B /* DFHackInitWriter.swift in Sources */,
 				020654921C79FDE600805075 /* GraphicsSetTransformer.swift in Sources */,
+				02566C861C7A4E070023663E /* JollyBastion.swift in Sources */,
+				02566C881C7A4E0F0023663E /* Mayday.swift in Sources */,
+				02566C941C7A578F0023663E /* Tergel.swift in Sources */,
 				02962F171C7893420019BAF2 /* Paths.swift in Sources */,
+				02566C841C7A46EC0023663E /* Ironhand.swift in Sources */,
+				02566C8E1C7A52E10023663E /* Shizzle.swift in Sources */,
+				02566C821C7A46E30023663E /* GrimFortress.swift in Sources */,
 				02566C801C7A3C4C0023663E /* Duerer.swift in Sources */,
 				02962F191C78982C0019BAF2 /* Versions.swift in Sources */,
+				02566C8C1C7A52D90023663E /* Phoebus.swift in Sources */,
 				0264CDEC1C6BAACA0074D5B0 /* DFInitWriterTools.swift in Sources */,
 				026CB1911C63F308001A1B8C /* LauncherViewController.swift in Sources */,
 				02240E5A1C67DBC90089F54B /* DFHackConfigEntry.swift in Sources */,
@@ -320,9 +360,12 @@
 				02962F1B1C78C2200019BAF2 /* DFHackPlugin.swift in Sources */,
 				026CB1AF1C654A51001A1B8C /* DisplayMode.swift in Sources */,
 				02566C7B1C7A24A40023663E /* CLA.swift in Sources */,
+				02566C8A1C7A4E180023663E /* Obsidian.swift in Sources */,
+				02566C921C7A57890023663E /* Taffer.swift in Sources */,
 				02962F281C7941850019BAF2 /* GraphicsSetInstaller.swift in Sources */,
 				02962F211C791BB30019BAF2 /* DispatchQueues.swift in Sources */,
 				026CB1A71C64007D001A1B8C /* Preferences.swift in Sources */,
+				02566C961C7A579C0023663E /* Wanderlust.swift in Sources */,
 				026CB1A91C64011D001A1B8C /* Launcher.swift in Sources */,
 				02D5F1281C7A1DAD00A49E58 /* GraphicsSetPreviewImageTransformer.swift in Sources */,
 				02962F1F1C78CA210019BAF2 /* DFHackUIUpgradePlugin.swift in Sources */,
@@ -331,6 +374,7 @@
 				02962F2A1C79422D0019BAF2 /* GemSet.swift in Sources */,
 				020654901C79FBAB00805075 /* GraphicsSet.swift in Sources */,
 				02240E521C679A610089F54B /* InitTxtWriter.swift in Sources */,
+				02566C901C7A52EF0023663E /* Spacefox.swift in Sources */,
 				0206548C1C794E5400805075 /* Packager.swift in Sources */,
 				02566C7E1C7A2FBF0023663E /* Afro.swift in Sources */,
 			);

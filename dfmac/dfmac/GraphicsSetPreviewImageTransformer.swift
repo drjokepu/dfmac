@@ -35,6 +35,28 @@ final class GraphicsSetPreviewImageTransformer: NSValueTransformer {
             return NSImage(named: "duerer_preview")
         case .gemSet:
             return NSImage(named: "gemset_preview")
+        case .grimFortress:
+            return NSImage(named: "grimfortress_preview")
+        case .ironhand:
+            return NSImage(named: "ironhand_preview")
+        case .jollyBastion:
+            return NSImage(named: "jolly_bastion_preview")
+        case .mayday:
+            return NSImage(named: "mayday_preview")
+        case .obsidian:
+            return NSImage(named: "obsidian_preview")
+        case .phoebus:
+            return NSImage(named: "phoebus_preview")
+        case .shizzle:
+            return NSImage(named: "shizzle_preview")
+        case .spacefox:
+            return NSImage(named: "spacefox_preview")
+        case .taffer:
+            return NSImage(named: "taffer_preview")
+        case .tergel:
+            return NSImage(named: "tergel_preview")
+        case .wanderlust:
+            return NSImage(named: "wanderlust_preview")
         default:
             return nil
         }

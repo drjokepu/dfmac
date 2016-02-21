@@ -8,6 +8,25 @@
 
 import Foundation
 
+private let graphicsSetTable: [GraphicsSet] = [
+    .none,
+    .afro,
+    .cla,
+    .duerer,
+    .gemSet,
+    .grimFortress,
+    .ironhand,
+    .jollyBastion,
+    .mayday,
+    .obsidian,
+    .phoebus,
+    .shizzle,
+    .spacefox,
+    .taffer,
+    .tergel,
+    .wanderlust
+]
+
 final class GraphicsSetTransformer: NSValueTransformer {
     override static func transformedValueClass() -> AnyClass {
         return NSNumber.self
@@ -42,22 +61,21 @@ final class GraphicsSetTransformer: NSValueTransformer {
     
     private func indexToGraphicsSet(index: Int) -> GraphicsSet {
         switch index {
-        case 1: return .afro
-        case 2: return .cla
-        case 3: return .duerer
-        case 4: return .gemSet
-        default: return .none
+        case 0 ..< graphicsSetTable.count:
+            return graphicsSetTable[index]
+        default:
+            return .none
         }
     }
     
     private func graphicsSetToIndex(mode: GraphicsSet) -> Int {
-        switch mode {
-        case .afro: return 1
-        case .cla: return 2
-        case .duerer: return 3
-        case .gemSet: return 4
-        default: return 0
+        for i in 0 ..< graphicsSetTable.count {
+            if graphicsSetTable[i] == mode {
+                return i
+            }
         }
+        
+        return 0
     }
     
     static func register() {

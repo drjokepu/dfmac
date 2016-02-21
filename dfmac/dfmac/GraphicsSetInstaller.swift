@@ -52,6 +52,28 @@ class GraphicsSetInstaller {
             return Duerer()
         case .gemSet:
             return GemSet()
+        case .grimFortress:
+            return GrimFortress()
+        case .ironhand:
+            return IronHand()
+        case .jollyBastion:
+            return JollyBastion()
+        case .mayday:
+            return Mayday()
+        case .obsidian:
+            return Obsidian()
+        case .phoebus:
+            return Phoebus()
+        case .shizzle:
+            return Shizzle()
+        case .spacefox:
+            return Spacefox()
+        case .taffer:
+            return Taffer()
+        case .tergel:
+            return Tergel()
+        case .wanderlust:
+            return Wanderlust()
         default:
             return nil
         }
