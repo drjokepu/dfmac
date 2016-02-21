@@ -9,6 +9,7 @@ DF_URL_FILENAME_VERSION=`echo $DF_VERSION | sed 's/^0\.//' | sed 's/\./_/'`
 DF_URL="https://dfmac.s3-eu-west-1.amazonaws.com/df/df_${DF_URL_FILENAME_VERSION}_osx.tar.bz2"
 
 GEMSET_URL='https://dfmac.s3.amazonaws.com/graphics_sets/gemset/GemSet%201.41.zip'
+CLA_URL='https://dfmac.s3.amazonaws.com/graphics_sets/cla/CLA_graphic_set_42.xx-v21-STANDALONE.zip'
 
 CURRENT_DIR="`pwd`"
 BASE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -138,20 +139,39 @@ function install_launch_script
 
 function get_graphics_sets
 {
+    rm -rf "${DF_DIR}/graphics_sets"
     mkdir -p "${DF_DIR}/graphics_sets"
     get_gemset
+    get_cla
+}
+
+function get_graphics_set
+{
+    local GS_NAME=$1
+    local GS_URL=$2
+
+    echo "Getting ${GS_NAME}..."
+    local GS_DIR="${DF_DIR}/graphics_sets/${GS_NAME}"
+    mkdir -p "${GS_DIR}"
+    cd "${GS_DIR}"
+
+    local GS_FILENAME="${GS_NAME}.zip"
+    wget -O ${GS_FILENAME} "${GS_URL}"
+    unzip ${GS_FILENAME}
+    rm ${GS_FILENAME}
+    cd "${CURRENT_DIR}" 
 }
 
 function get_gemset
 {
-    echo "Getting GemSet..."
-    local GEMSET_DIR="${DF_DIR}/graphics_sets/gemset"
-    mkdir -p "${GEMSET_DIR}"
-    cd "${GEMSET_DIR}"
-    wget -O gemset.zip "${GEMSET_URL}"
-    unzip gemset.zip
-    rm gemset.zip
-    cd "${CURRENT_DIR}" 
+    get_graphics_set "gemset" "${GEMSET_URL}"
+}
+
+function get_cla
+{
+    get_graphics_set "cla" "${CLA_URL}"
+    mv "${DF_DIR}/graphics_sets/cla/CLA/"* "${DF_DIR}/graphics_sets/cla/"
+    rmdir "${DF_DIR}/graphics_sets/cla/CLA"
 }
 
 init_df_dir

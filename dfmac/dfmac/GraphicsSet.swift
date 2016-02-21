@@ -11,4 +11,5 @@ import Foundation
 enum GraphicsSet: String {
     case none = ""
     case gemSet = "GemSet"
+    case cla = "CLA"
 }

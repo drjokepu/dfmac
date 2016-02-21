@@ -1452,12 +1452,15 @@ DQ
                             </textField>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xtc-vQ-WED" userLabel="Graphics Set Pop Up Button">
                                 <rect key="frame" x="276" y="332" width="312" height="26"/>
-                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="BNH-HO-phU">
+                                <popUpButtonCell key="cell" type="push" title="CLA" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="IpY-cw-5pq" id="BNH-HO-phU">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="NmH-gb-2bO">
                                         <items>
                                             <menuItem title="None" id="glZ-LK-Ais">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="CLA" state="on" id="IpY-cw-5pq">
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                             </menuItem>
                                             <menuItem title="GemSet" id="E20-eR-fag">

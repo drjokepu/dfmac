@@ -27,6 +27,8 @@ final class GraphicsSetPreviewImageTransformer: NSValueTransformer {
     
     private func graphicsSetToImage(mode: GraphicsSet) -> NSImage? {
         switch mode {
+        case .cla:
+            return NSImage(named: "cla_preview")
         case .gemSet:
             return NSImage(named: "gemset_preview")
         default:

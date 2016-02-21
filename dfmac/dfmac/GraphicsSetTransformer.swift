@@ -42,14 +42,16 @@ final class GraphicsSetTransformer: NSValueTransformer {
     
     private func indexToGraphicsSet(index: Int) -> GraphicsSet {
         switch index {
-        case 1: return .gemSet
+        case 1: return .cla
+        case 2: return .gemSet
         default: return .none
         }
     }
     
     private func graphicsSetToIndex(mode: GraphicsSet) -> Int {
         switch mode {
-        case .gemSet: return 1
+        case .cla: return 1
+        case .gemSet: return 2
         default: return 0
         }
     }

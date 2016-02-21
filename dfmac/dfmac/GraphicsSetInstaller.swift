@@ -32,6 +32,8 @@ class GraphicsSetInstaller {
     
     static func get(graphicsSet: GraphicsSet) -> GraphicsSetInstaller? {
         switch graphicsSet {
+        case .cla:
+            return CLA()
         case .gemSet:
             return GemSet()
         default:
