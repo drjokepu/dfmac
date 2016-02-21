@@ -8,9 +8,14 @@
 
 import Foundation
 
-func writeInitTxt(src: NSURL, dest: NSURL) throws {
+func writeInitTxt(src: NSURL, dest: NSURL, graphicsSet: GraphicsSetInstaller?) throws {
     let initTxt = try NSMutableString(contentsOfURL: src, encoding: NSASCIIStringEncoding)
     updateDisplaySettings(initTxt)
+    
+    if let grf = graphicsSet {
+        grf.configureInitTxt(initTxt)
+    }
+    
     try emitInitTxt(initTxt as String, dest: dest)
 }
 

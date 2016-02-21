@@ -16,7 +16,7 @@ final class Paths {
     
     /** session/Contents/Resources/df */
     static func dfURL(forSession sessionURL: NSURL) -> NSURL {
-        return NSURL(fileURLWithPath: NSString.pathWithComponents([sessionURL.path!, "df"]))
+        return NSURL(fileURLWithPath: NSString.pathWithComponents([sessionURL.path!, "df"]), isDirectory: true)
     }
     
     /** bundle/Contents/Resources/df/init/init.txt */
@@ -51,12 +51,12 @@ final class Paths {
     
     /** session/df/df_osx */
     static func gameExecutableFolderURL(sessionURL: NSURL) -> NSURL {
-        return NSURL(fileURLWithPath: NSString.pathWithComponents([dfURL(forSession: sessionURL).path!, "df_osx"]))
+        return NSURL(fileURLWithPath: NSString.pathWithComponents([dfURL(forSession: sessionURL).path!, "df_osx"]), isDirectory: true)
     }
     
     /** session/df/df_osx/libs */
     static func gameLibsFolderURL(sessionURL: NSURL) -> NSURL {
-        return NSURL(fileURLWithPath: NSString.pathWithComponents([dfURL(forSession: sessionURL).path!, "df_osx", "libs"]))
+        return NSURL(fileURLWithPath: NSString.pathWithComponents([dfURL(forSession: sessionURL).path!, "df_osx", "libs"]), isDirectory: true)
     }
     
     /** session/df/df_osx/data/save */
@@ -73,6 +73,10 @@ final class Paths {
     /** session/df/launch.sh */
     static func launchScriptURL(sessionURL: NSURL) -> NSURL {
         return NSURL(fileURLWithPath: NSString.pathWithComponents([dfURL(forSession: sessionURL).path!, "launch.sh"]))
+    }
+    
+    static func graphicsSetURL(name: String) -> NSURL {
+        return NSURL(fileURLWithPath: NSString.pathWithComponents([dfURL().path!, "graphics_sets", name]), isDirectory: true)
     }
     
     /** ~/Library/Application Support/io.github.drjokepu.dfmac */

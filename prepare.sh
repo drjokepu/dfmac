@@ -6,7 +6,9 @@ PACKAGE_DF_VERSION="`cat dfversion`"
 DF_VERSION=${DF_VERSION:-$PACKAGE_DF_VERSION}
 
 DF_URL_FILENAME_VERSION=`echo $DF_VERSION | sed 's/^0\.//' | sed 's/\./_/'`
-DF_URL="http://www.bay12games.com/dwarves/df_${DF_URL_FILENAME_VERSION}_osx.tar.bz2"
+DF_URL="https://dfmac.s3-eu-west-1.amazonaws.com/df/df_${DF_URL_FILENAME_VERSION}_osx.tar.bz2"
+
+GEMSET_URL='https://dfmac.s3.amazonaws.com/graphics_sets/gemset/GemSet%201.41.zip'
 
 CURRENT_DIR="`pwd`"
 BASE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -42,7 +44,7 @@ function get_df
 {
 	echo "Downloading: ${DF_URL}"
 	cd "$DF_DIR"
-	wget -q "http://www.bay12games.com/dwarves/df_42_05_osx.tar.bz2"
+	wget "${DF_URL}" 
 	echo "Extracting: ${DF_ARCHIVE_FILENAME}"
 	tar xjf "$DF_ARCHIVE_FILENAME"
 	rm -rf "$DF_ARCHIVE_FILENAME"
@@ -94,6 +96,24 @@ function install_launch_script
     ln "${BASE_DIR}/dfmac/scripts/launch.sh" "${DF_DIR}/launch.sh" 
 }
 
+function get_graphics_sets
+{
+    mkdir -p "${DF_DIR}/graphics_sets"
+    get_gemset
+}
+
+function get_gemset
+{
+    echo "Getting GemSet..."
+    local GEMSET_DIR="${DF_DIR}/graphics_sets/gemset"
+    mkdir -p "${GEMSET_DIR}"
+    cd "${GEMSET_DIR}"
+    wget -O gemset.zip "${GEMSET_URL}"
+    unzip gemset.zip
+    rm gemset.zip
+    cd "${CURRENT_DIR}" 
+}
+
 init_df_dir
 get_df
 prepare_df
@@ -101,3 +121,4 @@ build_dfhack
 set_mod
 install_launch_script
 init_version_files
+get_graphics_sets

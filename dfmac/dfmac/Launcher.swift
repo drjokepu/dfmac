@@ -8,8 +8,6 @@
 
 import Foundation
 
-private let hardLinkQueryKeys = [NSURLNameKey, NSURLIsDirectoryKey, NSURLIsSymbolicLinkKey]
-
 let LAUNCH_STARTED = "launch-started"
 let LAUNCH_FINISHED = "launch-finished"
 
@@ -45,44 +43,18 @@ final class Launcher {
         let df1 = Paths.dfURL(forSession: sessionURL)
         try hardLinkTree(from: df0, to: df1)
         
-        try applyPreferences(sessionURL)
+        let graphicsSet = GemSet()
+        try installGraphicsSet(sessionURL, graphicsSet: graphicsSet)
+        try applyPreferences(sessionURL, graphicsSet: graphicsSet)
         try ensureSaveFolderIsLinked(sessionURL)
     }
     
-    private static func hardLinkTree(from t0: NSURL, to t1: NSURL) throws {
-        var isDir = ObjCBool(false)
-        if !NSFileManager.defaultManager().fileExistsAtPath(t0.path!, isDirectory: &isDir) {
-            return
-        }
-        
-        if isDir.boolValue {
-            // create mirror folder
-            try NSFileManager.defaultManager().createDirectoryAtURL(t1, withIntermediateDirectories: true, attributes: nil)
-            let children = try NSFileManager.defaultManager().contentsOfDirectoryAtURL(t0, includingPropertiesForKeys: hardLinkQueryKeys, options: [])
-            
-            // link each child
-            for child in children {
-                let fileInfo = try child.resourceValuesForKeys(hardLinkQueryKeys)
-                let isChildDir = (fileInfo[NSURLIsDirectoryKey] as! NSNumber).boolValue
-                let isSymLink = (fileInfo[NSURLIsSymbolicLinkKey] as! NSNumber).boolValue
-                
-                let c0 = child
-                let c1 = NSURL(fileURLWithPath: NSString.pathWithComponents([t1.path!, child.lastPathComponent!]), isDirectory: isChildDir)
-                
-                if isSymLink {
-                    try NSFileManager.defaultManager().copyItemAtURL(c0, toURL: c1)
-                } else {
-                    try hardLinkTree(from: c0, to: c1)
-                }
-            }
-            
-        } else {
-            try NSFileManager.defaultManager().linkItemAtURL(t0, toURL: t1)
-        }
+    private static func installGraphicsSet(sessionURL: NSURL, graphicsSet: GraphicsSetInstaller) throws {
+        try graphicsSet.install(sessionURL)
     }
     
-    private static func applyPreferences(sessionURL: NSURL) throws {
-        try writeInitTxt(Paths.originalInitTxtURL(), dest: Paths.gameInitTxtURL(sessionURL))
+    private static func applyPreferences(sessionURL: NSURL, graphicsSet: GraphicsSetInstaller?) throws {
+        try writeInitTxt(Paths.originalInitTxtURL(), dest: Paths.gameInitTxtURL(sessionURL), graphicsSet: graphicsSet)
         try writeDInitTxt(Paths.originalDInitTxtURL(), dest: Paths.gameDInitTxtURL(sessionURL))
         try writeDFHackInit(Paths.dfHackInitURL(sessionURL))
     }
