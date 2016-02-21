@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
         <title>DF Mac Releases</title>
-        <link>https://drjokepu.github.io/dfmac/sparke-feed.xml</link>
+        <link>https://drjokepu.github.io/dfmac/sparkle-feed.xml</link>
         <description>The latest DF Mac releases.</description>
         <language>en</language>
         <item>
@@ -11,7 +11,6 @@
             <pubDate>Wed, 21 Feb 2016 22:00:00 +0000</pubDate>
             <enclosure url="https://drjokepu.github.io/dfmac/missing-release.zip" sparkle:version="0.1" length="0" type="application/octet-stream" />
             <sparkle:minimumSystemVersion>10.11</sparkle:minimumSystemVersion>
-        </item>
         </item>
     </channel>
 </rss>
