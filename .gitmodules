@@ -6,3 +6,6 @@
 	path = twbt
     url = https://github.com/mifki/df-twbt.git
     ignore = dirty
+[submodule "dfgraphics"]
+	path = dfgraphics
+	url = https://github.com/DFgraphics/DFgraphics.git

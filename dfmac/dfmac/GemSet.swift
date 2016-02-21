@@ -10,20 +10,10 @@ import Foundation
 
 final class GemSet: GraphicsSetInstaller {
     override var name: String {
-        return "gemset"
+        return "GemSet"
     }
     
-    override var initTxtSettings: [GraphicsSetTxtSetting] {
-        return [
-            GraphicsSetTxtSetting(key: "GRAPHICS", value: "YES"),
-            GraphicsSetTxtSetting(key: "GRAPHICS_WINDOWEDX", value: String(Preferences.windowedWidth)),
-            GraphicsSetTxtSetting(key: "GRAPHICS_WINDOWEDY", value: String(Preferences.windowedHeight)),
-            GraphicsSetTxtSetting(key: "GRAPHICS_FONT", value: "gemset_map.png"),
-            GraphicsSetTxtSetting(key: "GRAPHICS_FULLSCREENX", value: "0"),
-            GraphicsSetTxtSetting(key: "GRAPHICS_FULLSCREENY:", value: "0"),
-            GraphicsSetTxtSetting(key: "GRAPHICS_FULLFONT", value: "gemset_map.png"),
-            GraphicsSetTxtSetting(key: "GRAPHICS_BLACK_SPACE", value: "YES"),
-            GraphicsSetTxtSetting(key: "TEXTURE_PARAM", value: "LINEAR"),
-        ]
+    override var graphicsFontName: String {
+        return "gemset_map.png"
     }
 }

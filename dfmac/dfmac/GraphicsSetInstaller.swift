@@ -13,8 +13,12 @@ class GraphicsSetInstaller {
         return "NONE"
     }
     
+    var graphicsFontName: String {
+        return ""
+    }
+    
     var initTxtSettings: [GraphicsSetTxtSetting] {
-        return []
+        return GraphicsSetInstaller.makeDefaultInitTxtSettings(graphicsFontName)
     }
     
     func install(sessionURL: NSURL) throws {
@@ -39,5 +43,19 @@ class GraphicsSetInstaller {
         default:
             return nil
         }
+    }
+    
+    static func makeDefaultInitTxtSettings(graphicsFont: String) -> [GraphicsSetTxtSetting] {
+        return [
+            GraphicsSetTxtSetting(key: "GRAPHICS", value: "YES"),
+            GraphicsSetTxtSetting(key: "GRAPHICS_WINDOWEDX", value: String(Preferences.windowedWidth)),
+            GraphicsSetTxtSetting(key: "GRAPHICS_WINDOWEDY", value: String(Preferences.windowedHeight)),
+            GraphicsSetTxtSetting(key: "GRAPHICS_FONT", value: graphicsFont),
+            GraphicsSetTxtSetting(key: "GRAPHICS_FULLSCREENX", value: "0"),
+            GraphicsSetTxtSetting(key: "GRAPHICS_FULLSCREENY", value: "0"),
+            GraphicsSetTxtSetting(key: "GRAPHICS_FULLFONT", value: graphicsFont),
+            GraphicsSetTxtSetting(key: "GRAPHICS_BLACK_SPACE", value: "YES"),
+            GraphicsSetTxtSetting(key: "TEXTURE_PARAM", value: "LINEAR"),
+        ]
     }
 }

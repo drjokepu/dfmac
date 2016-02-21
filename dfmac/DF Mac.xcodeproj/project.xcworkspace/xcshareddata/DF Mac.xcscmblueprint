@@ -1,0 +1,135 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "54E859708B92FFBDC7C0921F968450FEDAD40ED2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "168DD04846133F236E823BFB08A5C70D2E6D3984" : 0,
+    "76DA4A8A5189945EE981F15FBCCCC8F976D8974B" : 0,
+    "BA9D398BD595B101189CFD120EC75ED50A97FE33" : 0,
+    "16DB1E444CA9176903CC160C1F9127B11100B839" : 0,
+    "54E859708B92FFBDC7C0921F968450FEDAD40ED2" : 0,
+    "8F55E17F2F3527220EF0F4BA59372CDCFE0DE8CB" : 0,
+    "EABBC93E2D74D1919459030330BC52EE3D4690C5" : 0,
+    "9EA79D38E7F500D93F429B4FD2AE8A6D0D617CF9" : 0,
+    "74D352856E2C1E2CC2723185F85DECEB2D15D852" : 0,
+    "9CF69F69361B78C282549893FB47E3761ED283B5" : 0,
+    "1EE65BDC6E4503F964377AA1B83F348484B5A88E" : 0,
+    "37D6D4E239F57431CBEE749FD26016E6C236A2F4" : 0,
+    "F6A4DA5C9D038C47DC50A4470976EF3EE5F3C5FA" : 0,
+    "FEF8AFF7D6DEEA5B04215FCE8411D564A3A9E163" : 0,
+    "38F365031AF054681DB423F458CE364D8C0B65D6" : 0,
+    "095FB540D76D41FACA8D9666AE8DBCE8C8671EA5" : 0,
+    "12C35EA9B3C941307AD8182CEA273FB7D06B3E4C" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C1564F10-188F-4B01-8757-912D4815D623",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "168DD04846133F236E823BFB08A5C70D2E6D3984" : "dfmac\/df\/graphics_sets\/dfgraphics\/Ironhand\/",
+    "76DA4A8A5189945EE981F15FBCCCC8F976D8974B" : "dfmac\/df\/graphics_sets\/dfgraphics\/Mayday\/",
+    "BA9D398BD595B101189CFD120EC75ED50A97FE33" : "dfmac\/df\/graphics_sets\/dfgraphics\/Obsidian\/",
+    "16DB1E444CA9176903CC160C1F9127B11100B839" : "dfmac\/df\/graphics_sets\/dfgraphics\/Shizzle\/",
+    "54E859708B92FFBDC7C0921F968450FEDAD40ED2" : "dfmac\/",
+    "8F55E17F2F3527220EF0F4BA59372CDCFE0DE8CB" : "dfmac\/df\/graphics_sets\/dfgraphics\/Grim-Fortress\/",
+    "EABBC93E2D74D1919459030330BC52EE3D4690C5" : "dfmac\/df\/graphics_sets\/dfgraphics\/Taffer\/",
+    "9EA79D38E7F500D93F429B4FD2AE8A6D0D617CF9" : "dfmac\/df\/graphics_sets\/dfgraphics\/Afro\/",
+    "74D352856E2C1E2CC2723185F85DECEB2D15D852" : "dfmac\/df\/graphics_sets\/dfgraphics\/Wanderlust\/",
+    "9CF69F69361B78C282549893FB47E3761ED283B5" : "dfmac\/df\/graphics_sets\/dfgraphics\/Spacefox\/",
+    "1EE65BDC6E4503F964377AA1B83F348484B5A88E" : "dfmac\/df\/graphics_sets\/dfgraphics\/ASCII-Default\/",
+    "37D6D4E239F57431CBEE749FD26016E6C236A2F4" : "dfmac\/df\/graphics_sets\/dfgraphics\/Tergel\/",
+    "F6A4DA5C9D038C47DC50A4470976EF3EE5F3C5FA" : "dfmac\/df\/graphics_sets\/dfgraphics\/CLA\/",
+    "FEF8AFF7D6DEEA5B04215FCE8411D564A3A9E163" : "dfmac\/df\/graphics_sets\/dfgraphics\/Phoebus\/",
+    "38F365031AF054681DB423F458CE364D8C0B65D6" : "dfmac\/df\/graphics_sets\/dfgraphics\/GemSet\/",
+    "095FB540D76D41FACA8D9666AE8DBCE8C8671EA5" : "dfmac\/df\/graphics_sets\/dfgraphics\/Jolly-Bastion\/",
+    "12C35EA9B3C941307AD8182CEA273FB7D06B3E4C" : "dfmac\/df\/graphics_sets\/dfgraphics\/Duerer\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "DF Mac",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "dfmac\/DF Mac.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fricy\/Jolly-Bastion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "095FB540D76D41FACA8D9666AE8DBCE8C8671EA5"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fricy\/Duerer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "12C35EA9B3C941307AD8182CEA273FB7D06B3E4C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fricy\/Ironhand",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "168DD04846133F236E823BFB08A5C70D2E6D3984"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fricy\/Shizzle",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "16DB1E444CA9176903CC160C1F9127B11100B839"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fricy\/ASCII-Default",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1EE65BDC6E4503F964377AA1B83F348484B5A88E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fricy\/Tergel.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "37D6D4E239F57431CBEE749FD26016E6C236A2F4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fricy\/GemSet.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "38F365031AF054681DB423F458CE364D8C0B65D6"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:drjokepu\/dfmac.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "54E859708B92FFBDC7C0921F968450FEDAD40ED2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fricy\/Wanderlust.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "74D352856E2C1E2CC2723185F85DECEB2D15D852"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fricy\/Mayday",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "76DA4A8A5189945EE981F15FBCCCC8F976D8974B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fricy\/Grim-Fortress",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8F55E17F2F3527220EF0F4BA59372CDCFE0DE8CB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fricy\/Spacefox",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9CF69F69361B78C282549893FB47E3761ED283B5"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fricy\/Afro-Graphics.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9EA79D38E7F500D93F429B4FD2AE8A6D0D617CF9"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fricy\/Obsidian.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BA9D398BD595B101189CFD120EC75ED50A97FE33"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fricy\/Taffer",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EABBC93E2D74D1919459030330BC52EE3D4690C5"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fricy\/CLA",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F6A4DA5C9D038C47DC50A4470976EF3EE5F3C5FA"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fricy\/Phoebus",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FEF8AFF7D6DEEA5B04215FCE8411D564A3A9E163"
+    }
+  ]
+}
