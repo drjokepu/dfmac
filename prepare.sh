@@ -154,12 +154,12 @@ function get_gemset
     cd "${CURRENT_DIR}" 
 }
 
-#init_df_dir
-#get_df
-#prepare_df
-#build_dfhack
+init_df_dir
+get_df
+prepare_df
+build_dfhack
 build_twbt
-#set_mod
-#install_launch_script
-#init_version_files
-#get_graphics_sets
+set_mod
+install_launch_script
+init_version_files
+get_graphics_sets
