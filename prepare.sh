@@ -145,12 +145,37 @@ function get_graphics_sets
     rm -rf "${DF_DIR}/graphics_sets/"**/.git 
 }
 
-init_df_dir
-get_df
-prepare_df
-build_dfhack
-build_twbt
-set_mod
-install_launch_script
-init_version_files
-get_graphics_sets
+function add_lc_version_min
+{
+    cd "${DF_DIR}/df_osx"
+    add_lc_version_min_to_executable ./dwarfort.exe
+    add_lc_version_min_to_executable ./libs/libfmodex.dylib
+    add_lc_version_min_to_executable ./libs/libgcc_s.1.dylib
+    add_lc_version_min_to_executable ./libs/libstdc++.6.dylib
+    add_lc_version_min_to_executable ./libs/SDL.framework/Versions/A/SDL
+    add_lc_version_min_to_executable ./libs/SDL_image.framework/Versions/A/SDL_image
+    add_lc_version_min_to_executable ./libs/SDL_ttf.framework/Versions/A/SDL_ttf
+
+    cd "${BASE_DIR}"
+}
+
+function add_lc_version_min_to_executable
+{
+    if otool -l $1 | grep LC_VERSION_MIN_MACOSX >/dev/null; then
+        echo "$1 already has LC_VERSION_MIN_MACOSX"
+    else
+        echo "$1"
+        optool install -c version_min_macosx -t "$1"
+    fi
+}
+
+#init_df_dir
+#get_df
+#prepare_df
+#build_dfhack
+#build_twbt
+#set_mod
+#install_launch_script
+#init_version_files
+#get_graphics_sets
+add_lc_version_min
