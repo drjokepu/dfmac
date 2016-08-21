@@ -12,7 +12,7 @@ final class LaunchingViewController: NSViewController {
     @IBOutlet var progress: NSProgressIndicator?
     
     override func viewDidLoad() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didLaunchFinish", name: LAUNCH_FINISHED, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LaunchingViewController.didLaunchFinish), name: LAUNCH_FINISHED, object: nil)
         progress?.startAnimation(self)
     }
     

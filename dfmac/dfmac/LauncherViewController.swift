@@ -15,7 +15,7 @@ final class LauncherViewController: NSViewController {
         super.viewDidLoad()
         versionLabel?.stringValue = "Dwarf Fortress: \(Versions.df) DFHack: \(Versions.dfHack)"
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didLaunchStart", name: LAUNCH_STARTED, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LauncherViewController.didLaunchStart), name: LAUNCH_STARTED, object: nil)
     }
     
     override func viewWillDisappear() {
